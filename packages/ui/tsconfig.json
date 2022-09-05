@@ -1,8 +1,9 @@
 {
   "extends": "@acima/tsconfig/react.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "../../dist/packages/ui",
+    "rootDir": "."
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["node_modules"]
 }
