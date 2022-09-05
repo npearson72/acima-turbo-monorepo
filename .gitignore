@@ -1,0 +1,13 @@
+# dependencies
+node_modules
+
+# misc
+.DS_Store
+.turbo
+
+# logs
+yarn-debug.log*
+yarn-error.log*
+
+# builds
+dist
