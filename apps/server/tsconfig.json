@@ -1,5 +1,5 @@
 {
-  "extends": "@acima/tsconfig/react.json",
+  "extends": "@acima/tsconfig/base.json",
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src"
