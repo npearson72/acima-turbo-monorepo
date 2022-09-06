@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   extends: ['@acima/custom'],
   parserOptions: {
-    project: 'tsconfig.eslint.json',
+    project: ['./tsconfig.json', '../../tsconfig.eslint.json'],
     tsconfigRootDir: __dirname
   }
 };

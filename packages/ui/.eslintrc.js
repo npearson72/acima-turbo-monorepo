@@ -1,8 +1,8 @@
 module.exports = {
   root: true,
-  extends: ['@acima/custom'],
+  extends: ['@acima/custom/react'],
   parserOptions: {
-    project: 'tsconfig.json',
+    project: ['./tsconfig.json', '../../tsconfig.eslint.json'],
     tsconfigRootDir: __dirname
   }
 };
