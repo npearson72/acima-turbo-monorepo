@@ -7,5 +7,8 @@ export default defineConfig({
   build: {
     emptyOutDir: true,
     outDir: '../../dist/apps/web'
+  },
+  server: {
+    port: 4010
   }
 });
