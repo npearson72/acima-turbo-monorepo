@@ -4,9 +4,10 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "node ./esbuild.config.js",
+    "build": "node ./build.js",
     "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
-    "lint": "eslint src --quiet"
+    "lint": "eslint src --quiet",
+    "preview": "node --enable-source-maps ../../dist/apps/server/index.js"
   },
   "dependencies": {
     "@acima/util": "*",
