@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
+const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 function getHtmlPlugins(chunks) {
@@ -38,6 +39,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new ForkTsCheckerPlugin(),
     new CleanWebpackPlugin({
       cleanStaleWebpackAssets: false,
       protectWebpackAssets: false,
