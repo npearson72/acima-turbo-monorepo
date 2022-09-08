@@ -20,6 +20,14 @@ function updateManifest(content) {
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'cheap-module-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  },
   plugins: [
     new CopyPlugin({
       patterns: [

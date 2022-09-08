@@ -4,4 +4,5 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 
   sendResponse('Hello from the background script.');
 });
+
 export {};

@@ -1,10 +1,29 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'esbuild-loader',
+            options: {
+              loader: 'css',
+              minify: true
+            }
+          }
+        ]
+      }
+    ]
+  },
   plugins: [
     new CopyPlugin({
       patterns: [
@@ -14,5 +33,13 @@ module.exports = merge(common, {
         }
       ]
     })
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      new ESBuildMinifyPlugin({
+        target: 'es2016',
+        legalComments: 'none'
+      })
+    ]
+  }
 });

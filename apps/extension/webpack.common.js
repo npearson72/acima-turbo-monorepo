@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
-const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
+const { ProvidePlugin } = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 function getHtmlPlugins(chunks) {
@@ -21,16 +21,18 @@ module.exports = {
     background: path.resolve('src/background/background.ts'),
     content: path.resolve('src/content/content.ts')
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+  },
   module: {
     rules: [
       {
-        test: /\.tsx?$/i,
-        use: 'ts-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
+        test: /\.tsx?$/,
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'tsx',
+          target: 'es2016'
+        }
       },
       {
         test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/i,
@@ -39,21 +41,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new ForkTsCheckerPlugin(),
+    new ProvidePlugin({ React: 'react' }),
     new CleanWebpackPlugin({
-      cleanStaleWebpackAssets: false,
-      protectWebpackAssets: false,
-      cleanAfterEveryBuildPatterns: ['*.LICENSE.txt']
+      cleanStaleWebpackAssets: false
     }),
     ...getHtmlPlugins(['popup', 'options'])
   ],
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js']
-  },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, '../../dist/apps/extension')
-  },
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -64,5 +57,9 @@ module.exports = {
         }
       }
     }
+  },
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, '../../dist/apps/extension')
   }
 };
