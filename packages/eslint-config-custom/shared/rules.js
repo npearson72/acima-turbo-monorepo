@@ -10,6 +10,7 @@ module.exports = {
       }
     ],
     '@typescript-eslint/no-unused-vars': 'warn',
+    'arrow-body-style': 'off',
     'arrow-parens': ['error', 'as-needed'],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'max-len': ['error', { code: 80 }]
