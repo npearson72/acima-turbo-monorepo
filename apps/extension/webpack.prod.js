@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
@@ -11,7 +12,7 @@ module.exports = merge(common, {
       {
         test: /\.css$/i,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'esbuild-loader',
@@ -25,6 +26,9 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash:8].css'
+    }),
     new CopyPlugin({
       patterns: [
         {
@@ -38,6 +42,7 @@ module.exports = merge(common, {
     minimizer: [
       new ESBuildMinifyPlugin({
         target: 'es2016',
+        css: true,
         legalComments: 'none'
       })
     ]

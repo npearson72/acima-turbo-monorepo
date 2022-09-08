@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "tsc --noEmit && node ./build.js",
+    "build": "tsc --noEmit && node build.js",
     "dev": "tsx watch --clear-screen=false src/index.ts",
     "lint": "eslint src --quiet",
     "preview": "node --enable-source-maps ../../dist/apps/server/index.js"
