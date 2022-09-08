@@ -1,5 +1,4 @@
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -43,14 +42,6 @@ module.exports = {
       cleanStaleWebpackAssets: false,
       protectWebpackAssets: false,
       cleanAfterEveryBuildPatterns: ['*.LICENSE.txt']
-    }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve('src/assets/manifest.json'),
-          to: path.resolve(__dirname, '../../dist/apps/extension')
-        }
-      ]
     }),
     ...getHtmlPlugins(['popup', 'options'])
   ],
