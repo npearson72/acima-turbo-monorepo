@@ -13,7 +13,9 @@ module.exports = {
     'arrow-body-style': 'off',
     'arrow-parens': ['error', 'as-needed'],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'max-len': ['error', { code: 80 }]
+    'import/prefer-default-export': 'off',
+    'max-len': ['error', { code: 80 }],
+    'object-curly-newline': 'off'
   },
   overrides: [
     // Use overrides for similar rules that apply to different file types

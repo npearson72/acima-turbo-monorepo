@@ -1,3 +1,10 @@
 {
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/.*rc.js", "./.ladle/*.mjs"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/.*rc.js",
+    "./.ladle/*.mjs",
+    "./.ladle/*.tsx"
+  ]
 }
