@@ -1,5 +1,5 @@
 import { Button } from '@mantine/core';
-import { CounterButton as CButton } from '@acima/ui/components';
+import { CounterButton } from '@acima/ui/components';
 import styled from '@emotion/styled';
 
 const Layout = styled.div`
@@ -18,5 +18,5 @@ export const Basic = () => {
 };
 
 export const Counter = () => {
-  return <CButton />;
+  return <CounterButton />;
 };
