@@ -33,10 +33,10 @@ const CustomProvider: React.FC<Props> = ({ children }) => {
     }
   }, []);
 
-  const theme = themeSelector(themeId);
+  const { theme } = themeSelector(themeId) as Acima.IThemeStruct;
 
   return (
-    <MantineProvider theme={theme?.data} withNormalizeCSS withGlobalStyles>
+    <MantineProvider theme={theme} withNormalizeCSS withGlobalStyles>
       {children}
     </MantineProvider>
   );

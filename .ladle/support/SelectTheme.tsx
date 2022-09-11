@@ -7,7 +7,7 @@ const StyledNativeSelect = styled(NativeSelect)`
 `;
 
 interface Props {
-  themes: any[];
+  themes: Acima.IThemeStruct[];
   setThemeId: Dispatch<SetStateAction<string>>;
 }
 

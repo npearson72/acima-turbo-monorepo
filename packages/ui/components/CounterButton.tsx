@@ -1,14 +1,12 @@
 import { useState } from 'react';
+import { Button } from '@mantine/core';
 
 export const CounterButton = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <button
-      type="button"
-      onClick={() => setCount(previousCount => previousCount + 1)}
-    >
-      count is {count}
-    </button>
+    <Button onClick={() => setCount(previousCount => previousCount + 1)}>
+      Count: {count}
+    </Button>
   );
 };

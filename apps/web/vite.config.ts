@@ -6,7 +6,18 @@ export default defineConfig({
   plugins: [react()],
   build: {
     emptyOutDir: true,
-    outDir: '../../dist/apps/web'
+    outDir: '../../dist/apps/web',
+    rollupOptions: {
+      output: {
+        manualChunks: id => {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+
+          return undefined;
+        }
+      }
+    }
   },
   server: {
     port: 4010
