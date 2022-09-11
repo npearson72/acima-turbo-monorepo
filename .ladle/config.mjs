@@ -2,7 +2,10 @@
 // https://ladle.dev/docs/
 
 export default {
-  stories: ['stories/src/**/*.stories.{js,jsx,ts,tsx}'],
+  stories: [
+    'stories/src/**/*.story.{js,jsx,ts,tsx}',
+    'packages/ui/components/**/*.story.{js,jsx,ts,tsx}'
+  ],
   addons: {
     rtl: {
       enabled: false

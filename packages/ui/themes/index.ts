@@ -1,4 +1,4 @@
-const theme1: Acima.ITheme = {
+const theme1: Acima.Theme = {
   defaultRadius: 'xl',
   components: {
     Button: {
@@ -10,7 +10,7 @@ const theme1: Acima.ITheme = {
   }
 };
 
-const theme2: Acima.ITheme = {
+const theme2: Acima.Theme = {
   defaultRadius: 'sm',
   components: {
     Button: {
@@ -23,11 +23,11 @@ const theme2: Acima.ITheme = {
   }
 };
 
-export const themes: Acima.IThemeStruct[] = [
+export const themePacks: Acima.ThemePack[] = [
   { id: 'theme1', name: 'Theme 1', theme: theme1 },
   { id: 'theme2', name: 'Theme 2', theme: theme2 }
 ];
 
 export function themeSelector(id: string) {
-  return themes.find(theme => theme.id === id);
+  return themePacks.find(themePack => themePack.id === id);
 }

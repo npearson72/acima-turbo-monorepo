@@ -7,11 +7,11 @@ const StyledNativeSelect = styled(NativeSelect)`
 `;
 
 interface Props {
-  themes: Acima.IThemeStruct[];
+  themePacks: Acima.ThemePack[];
   setThemeId: Dispatch<SetStateAction<string>>;
 }
 
-const SelectTheme: React.FC<Props> = ({ themes, setThemeId }) => {
+const SelectTheme: React.FC<Props> = ({ themePacks, setThemeId }) => {
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setThemeId(event.target.value);
   };
@@ -19,7 +19,10 @@ const SelectTheme: React.FC<Props> = ({ themes, setThemeId }) => {
   return (
     <StyledNativeSelect
       onChange={handleChange}
-      data={themes.map(theme => ({ value: theme.id, label: theme.name }))}
+      data={themePacks.map(themePack => ({
+        value: themePack.id,
+        label: themePack.name
+      }))}
     />
   );
 };

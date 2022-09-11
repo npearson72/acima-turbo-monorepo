@@ -1,5 +1,4 @@
 import { Button } from '@mantine/core';
-import { CounterButton } from '@acima/ui/components';
 import styled from '@emotion/styled';
 
 const Layout = styled.div`
@@ -7,7 +6,11 @@ const Layout = styled.div`
   gap: 10px;
 `;
 
-export const Basic = () => {
+export default {
+  title: 'Primitive / Buttons'
+};
+
+export const Story = () => {
   return (
     <Layout>
       <Button variant="filled">Button</Button>
@@ -17,6 +20,4 @@ export const Basic = () => {
   );
 };
 
-export const Counter = () => {
-  return <CounterButton />;
-};
+Story.storyName = 'All';

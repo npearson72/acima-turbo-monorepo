@@ -12,7 +12,7 @@
     "lint": "turbo run lint",
     "lint-all": "eslint '**/*.{js,jsx,ts,tsx}' --quiet",
     "preview": "turbo run preview",
-    "stories": "ladle serve"
+    "stories": "ladle dev"
   },
   "dependencies": {
     "@acima/ui": "*",

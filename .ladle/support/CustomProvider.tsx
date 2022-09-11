@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { MantineProvider } from '@mantine/core';
-import { themes, themeSelector } from '@ui/themes';
+import { themePacks, themeSelector } from '@ui/themes';
 import SelectTheme from './SelectTheme';
 
-const themeIds = themes.map(theme => theme.id);
+const themeIds = themePacks.map(theme => theme.id);
 
 interface Props {
   children: any;
@@ -27,13 +27,13 @@ const CustomProvider: React.FC<Props> = ({ children }) => {
 
       ReactDOM.createRoot(themeSelectorDiv).render(
         <React.StrictMode>
-          <SelectTheme setThemeId={setThemeId} themes={themes} />
+          <SelectTheme setThemeId={setThemeId} themePacks={themePacks} />
         </React.StrictMode>
       );
     }
   }, []);
 
-  const { theme } = themeSelector(themeId) as Acima.IThemeStruct;
+  const { theme } = themeSelector(themeId) as Acima.ThemePack;
 
   return (
     <MantineProvider theme={theme} withNormalizeCSS withGlobalStyles>
