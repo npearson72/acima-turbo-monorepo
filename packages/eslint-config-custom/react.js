@@ -20,7 +20,10 @@ module.exports = {
     }
   },
   rules: {
-    'react/function-component-definition': 'off',
+    'react/function-component-definition': [
+      'error',
+      { namedComponents: 'arrow-function' }
+    ],
     'react/jsx-one-expression-per-line': 'off',
     'react/prop-types': 'off'
   },
