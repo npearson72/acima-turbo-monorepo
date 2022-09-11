@@ -15,6 +15,7 @@
     "stories": "ladle serve"
   },
   "dependencies": {
+    "@acima/ui": "*",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mantine/core": "^5.3.0",
