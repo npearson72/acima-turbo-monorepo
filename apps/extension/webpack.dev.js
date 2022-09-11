@@ -1,6 +1,5 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 
@@ -25,14 +24,11 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: ['css-loader']
       }
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css'
-    }),
     new CopyPlugin({
       patterns: [
         {

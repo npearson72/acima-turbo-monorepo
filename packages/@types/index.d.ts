@@ -1,12 +1,15 @@
+import type { MantineColor, MantineNumberSize } from '@mantine/core';
+
 declare namespace Acima {
   interface ITheme {
-    components: {
-      Button: {
+    defaultRadius?: MantineNumberSize | number;
+    components?: {
+      Button?: {
         defaultProps: {
           uppercase?: boolean;
-          size: string;
-          radius: string;
-          color: string;
+          size?: MantineNumberSize | number;
+          radius?: MantineNumberSize | number;
+          color?: MantineColor;
         };
       };
     };
@@ -24,3 +27,4 @@ declare namespace Acima {
 }
 
 export as namespace Acima;
+export = Acima;

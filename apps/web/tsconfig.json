@@ -2,7 +2,8 @@
   "extends": "@acima/tsconfig/react.json",
   "compilerOptions": {
     "outDir": "../../dist/apps/web",
-    "rootDir": "src"
+    "rootDir": "src",
+    "sourceMap": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]

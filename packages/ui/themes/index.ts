@@ -1,9 +1,9 @@
 const theme1: Acima.ITheme = {
+  defaultRadius: 'xl',
   components: {
     Button: {
       defaultProps: {
         size: 'xs',
-        radius: 'xl',
         color: 'grape.6'
       }
     }
@@ -11,12 +11,12 @@ const theme1: Acima.ITheme = {
 };
 
 const theme2: Acima.ITheme = {
+  defaultRadius: 'sm',
   components: {
     Button: {
       defaultProps: {
         uppercase: true,
         size: 'xs',
-        radius: 'sm',
         color: 'blue.6'
       }
     }
