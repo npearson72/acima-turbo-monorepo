@@ -1,23 +1,23 @@
 const theme1: Acima.Theme = {
-  defaultRadius: 'xl',
   components: {
     Button: {
       defaultProps: {
-        size: 'xs',
-        color: 'grape.6'
+        color: 'grape.6',
+        radius: 'xl',
+        size: 'sm'
       }
     }
   }
 };
 
 const theme2: Acima.Theme = {
-  defaultRadius: 'sm',
   components: {
     Button: {
       defaultProps: {
-        uppercase: true,
-        size: 'xs',
-        color: 'blue.6'
+        color: 'blue.6',
+        radius: 'sm',
+        size: 'sm',
+        uppercase: true
       }
     }
   }
