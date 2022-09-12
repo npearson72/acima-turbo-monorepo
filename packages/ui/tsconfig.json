@@ -4,6 +4,6 @@
     "outDir": "../../dist/packages/ui",
     "rootDir": "."
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
