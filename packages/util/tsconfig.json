@@ -1,9 +1,7 @@
 {
   "extends": "@acima/tsconfig/base.json",
   "compilerOptions": {
-    "outDir": "../../dist/packages/util",
     "rootDir": "."
   },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["**/*.ts"]
 }

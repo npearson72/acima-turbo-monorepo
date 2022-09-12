@@ -6,9 +6,9 @@ import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   plugins: [
     react({
-      jsxImportSource: '@emotion/react',
+      jsxImportSource: '@emotion/react', // Allows emotion css prop
       babel: {
-        plugins: ['@emotion/babel-plugin']
+        plugins: ['@emotion/babel-plugin'] // Allows emotion css source maps
       }
     }),
     visualizer({
@@ -19,9 +19,7 @@ export default defineConfig({
     })
   ],
   esbuild: {
-    define: {
-      this: 'window'
-    }
+    logOverride: { 'this-is-undefined-in-esm': 'silent' }
   },
   build: {
     emptyOutDir: true,

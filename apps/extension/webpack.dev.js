@@ -20,29 +20,6 @@ function updateManifest(content) {
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'cheap-module-source-map',
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@emotion/babel-preset-css-prop'],
-              plugins: ['@emotion']
-            }
-          },
-          {
-            loader: 'esbuild-loader',
-            options: {
-              loader: 'tsx',
-              target: 'es2016'
-            }
-          }
-        ]
-      }
-    ]
-  },
   plugins: [
     new CopyPlugin({
       patterns: [

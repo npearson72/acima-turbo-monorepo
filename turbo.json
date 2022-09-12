@@ -12,6 +12,9 @@
     },
     "preview": {
       "dependsOn": ["build"]
+    },
+    "stories": {
+      "outputs": []
     }
   }
 }

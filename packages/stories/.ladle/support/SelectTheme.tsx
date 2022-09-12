@@ -1,8 +1,8 @@
 import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { NativeSelect } from '@mantine/core';
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-const StyledNativeSelect = styled(NativeSelect)`
+const style = css`
   margin-bottom: 1rem;
 `;
 
@@ -17,7 +17,8 @@ const SelectTheme: React.FC<Props> = ({ themePacks, setThemeId }) => {
   };
 
   return (
-    <StyledNativeSelect
+    <NativeSelect
+      css={style}
       onChange={handleChange}
       data={themePacks.map(themePack => ({
         value: themePack.id,
