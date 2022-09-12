@@ -27,6 +27,24 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: ['@emotion']
+            }
+          },
+          {
+            loader: 'esbuild-loader',
+            options: {
+              loader: 'tsx',
+              target: 'es2016'
+            }
+          }
+        ]
+      },
+      {
         test: /\.css$/i,
         use: [
           'style-loader',
