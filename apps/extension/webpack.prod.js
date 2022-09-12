@@ -6,6 +6,22 @@ const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'esbuild-loader',
+            options: {
+              loader: 'tsx',
+              target: 'es2016'
+            }
+          }
+        ]
+      }
+    ]
+  },
   plugins: [
     new BundleAnalyzerPlugin({
       openAnalyzer: true,

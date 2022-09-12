@@ -1,11 +1,8 @@
-// jsx preserve is to enable @emotion/babel-preset-css-prop to work
-// https://github.com/emotion-js/emotion/issues/1748#issuecomment-582497068
-
 {
   "extends": "@acima/tsconfig/react.json",
   "compilerOptions": {
     "outDir": "../../dist/apps/extension",
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
