@@ -1,7 +1,7 @@
 import { CounterButton } from '@acima/ui/components';
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-const Container = styled.div`
+const style = css`
   align-items: center;
   display: flex;
   height: 100vh;
@@ -10,9 +10,9 @@ const Container = styled.div`
 
 const App: React.FC = () => {
   return (
-    <Container>
+    <div css={style}>
       <CounterButton />
-    </Container>
+    </div>
   );
 };
 

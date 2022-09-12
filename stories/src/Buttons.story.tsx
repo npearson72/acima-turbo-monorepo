@@ -1,7 +1,7 @@
 import { Button } from '@mantine/core';
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-const Layout = styled.div`
+const style = css`
   display: flex;
   gap: 10px;
 `;
@@ -12,11 +12,11 @@ export default {
 
 export const Story = () => {
   return (
-    <Layout>
+    <div css={style}>
       <Button variant="filled">Button</Button>
       <Button variant="light">Button</Button>
       <Button variant="outline">Button</Button>
-    </Layout>
+    </div>
   );
 };
 

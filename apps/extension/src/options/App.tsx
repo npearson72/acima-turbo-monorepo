@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-const Container = styled.div`
+const style = css`
   height: 400px;
   text-align: center;
   width: 400px;
@@ -8,10 +8,10 @@ const Container = styled.div`
 
 const App: React.FC = () => {
   return (
-    <Container>
+    <div css={style}>
       <h1>Options</h1>
       <p>Options go here!</p>
-    </Container>
+    </div>
   );
 };
 

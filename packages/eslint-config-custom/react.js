@@ -25,6 +25,7 @@ module.exports = {
       { namedComponents: 'arrow-function' }
     ],
     'react/jsx-one-expression-per-line': 'off',
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'react/prop-types': 'off'
   },
   ignorePatterns: ['node_modules', 'dist', 'build', '!.*rc.js']

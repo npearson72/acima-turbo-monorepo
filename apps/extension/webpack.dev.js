@@ -28,6 +28,7 @@ module.exports = merge(common, {
           {
             loader: 'babel-loader',
             options: {
+              presets: ['@emotion/babel-preset-css-prop'],
               plugins: ['@emotion']
             }
           },

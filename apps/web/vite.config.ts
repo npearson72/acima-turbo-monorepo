@@ -6,6 +6,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   plugins: [
     react({
+      jsxImportSource: '@emotion/react',
       babel: {
         plugins: ['@emotion/babel-plugin']
       }
@@ -17,6 +18,11 @@ export default defineConfig({
       filename: '../../stats/web.html'
     })
   ],
+  esbuild: {
+    define: {
+      this: 'window'
+    }
+  },
   build: {
     emptyOutDir: true,
     outDir: '../../dist/apps/web',
