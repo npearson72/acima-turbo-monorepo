@@ -23,8 +23,22 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ['css-loader']
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: ['@emotion']
+            }
+          },
+          {
+            loader: 'esbuild-loader',
+            options: {
+              loader: 'tsx',
+              target: 'es2016'
+            }
+          }
+        ]
       }
     ]
   },

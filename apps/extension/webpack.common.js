@@ -27,12 +27,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        loader: 'esbuild-loader',
-        options: {
-          loader: 'tsx',
-          target: 'es2016'
-        }
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'esbuild-loader',
+            options: {
+              loader: 'css',
+              minify: true
+            }
+          }
+        ]
       },
       {
         test: /\.(jpg|jpeg|png|svg|woff|woff2|eot|ttf)$/i,

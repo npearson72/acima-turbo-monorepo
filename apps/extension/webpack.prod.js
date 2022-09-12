@@ -1,6 +1,6 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const { ESBuildMinifyPlugin } = require('esbuild-loader');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 
@@ -9,14 +9,13 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.tsx?$/,
         use: [
-          'css-loader',
           {
             loader: 'esbuild-loader',
             options: {
-              loader: 'css',
-              minify: true
+              loader: 'tsx',
+              target: 'es2016'
             }
           }
         ]
@@ -24,6 +23,11 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
+    new BundleAnalyzerPlugin({
+      openAnalyzer: true,
+      analyzerMode: 'static',
+      reportFilename: path.resolve(__dirname, '../../stats/extension.html')
+    }),
     new CopyPlugin({
       patterns: [
         {
@@ -32,14 +36,5 @@ module.exports = merge(common, {
         }
       ]
     })
-  ],
-  optimization: {
-    minimizer: [
-      new ESBuildMinifyPlugin({
-        target: 'es2016',
-        css: true,
-        legalComments: 'none'
-      })
-    ]
-  }
+  ]
 });
