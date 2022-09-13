@@ -18,9 +18,6 @@ export default defineConfig({
       filename: '../../stats/web.html'
     })
   ],
-  esbuild: {
-    logOverride: { 'this-is-undefined-in-esm': 'silent' }
-  },
   build: {
     emptyOutDir: true,
     outDir: '../../dist/apps/web',
@@ -35,6 +32,9 @@ export default defineConfig({
         }
       }
     }
+  },
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' }
   },
   server: {
     port: 4010

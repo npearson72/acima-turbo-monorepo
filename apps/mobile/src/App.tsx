@@ -14,6 +14,7 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { fileTray, personCircle, barChart } from 'ionicons/icons';
+import { css } from '@emotion/react';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
@@ -34,11 +35,9 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
-// /* Theme variables */
-// import './theme/variables.css';
-
-/* App css */
-import './App.css';
+const style = css`
+  text-align: center;
+`;
 
 setupIonicReact();
 
@@ -47,7 +46,7 @@ const App: React.FC = () => {
     <IonApp>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Todos</IonTitle>
+          <IonTitle css={style}>Acima</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonReactRouter>
