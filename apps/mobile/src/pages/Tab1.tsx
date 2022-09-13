@@ -6,6 +6,7 @@ const style = css`
   &::part(scroll) {
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
   }
 `;
