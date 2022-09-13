@@ -9,6 +9,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "dev:ios": "turbo run dev:ios",
     "lint": "turbo run lint",
     "lint-all": "eslint '**/*.{js,jsx,ts,tsx}' --quiet",
     "preview": "turbo run preview",

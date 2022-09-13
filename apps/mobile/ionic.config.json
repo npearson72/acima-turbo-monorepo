@@ -1,0 +1,7 @@
+{
+  "name": "@acima/mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}
