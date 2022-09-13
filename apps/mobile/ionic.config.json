@@ -1,5 +1,5 @@
 {
-  "name": "@acima/mobile",
+  "name": "Acima",
   "integrations": {
     "capacitor": {}
   },
