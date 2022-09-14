@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
-import prisma from '@configs/prisma';
+import db from '@utils/db';
 
 const getAll = async (_req: Request, res: Response) => {
-  const todos = await prisma.todo.findMany({ orderBy: { id: 'asc' } });
+  const todos = await db.todo.findMany({ orderBy: { id: 'asc' } });
 
   res.status(200).json({ todos });
 };

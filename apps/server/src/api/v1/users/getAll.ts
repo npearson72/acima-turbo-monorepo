@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
-import prisma from '@configs/prisma';
+import db from '@utils/db';
 
 const getAll = async (_req: Request, res: Response) => {
-  const users = await prisma.user.findMany({ orderBy: { id: 'asc' } });
+  const users = await db.user.findMany({ orderBy: { id: 'asc' } });
 
   res.status(200).json({ users });
 };

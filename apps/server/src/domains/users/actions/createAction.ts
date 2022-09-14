@@ -1,4 +1,4 @@
-import prisma from '@configs/prisma';
+import db from '@utils/db';
 import { serviceResult } from '@utils';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const createAction = async ({ firstName, lastName, email }: Props) => {
-  const user = await prisma.user.create({
+  const user = await db.user.create({
     data: {
       firstName,
       lastName,

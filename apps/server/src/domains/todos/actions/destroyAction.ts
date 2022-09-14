@@ -1,4 +1,4 @@
-import prisma from '@configs/prisma';
+import db from '@utils/db';
 import { serviceResult } from '@utils';
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 
 const destroyAction = async ({ id }: Props) => {
   try {
-    await prisma.todo.delete({
+    await db.todo.delete({
       where: { id: Number(id) }
     });
 

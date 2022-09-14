@@ -1,4 +1,4 @@
-import prisma from '@configs/prisma';
+import db from '@utils/db';
 import { serviceResult } from '@utils';
 
 interface Props {
@@ -9,13 +9,13 @@ interface Props {
 const createAction = async ({ title, userId }: Props) => {
   // TODO: Pass userId once authentication is added
 
-  const user = await prisma.user.findFirst();
+  const user = await db.user.findFirst();
 
   if (!user) {
     return serviceResult({ error: { code: 'UserNotFound' } });
   }
 
-  const todo = await prisma.todo.create({
+  const todo = await db.todo.create({
     data: {
       title,
       user: { connect: { id: user.id } }

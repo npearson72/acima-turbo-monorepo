@@ -1,4 +1,4 @@
-import prisma from '@configs/prisma';
+import db from '@utils/db';
 import { serviceResult } from '@utils';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 
 const updateAction = async ({ id, complete }: Props) => {
   try {
-    const todo = await prisma.todo.update({
+    const todo = await db.todo.update({
       where: { id: Number(id) },
       data: { complete }
     });
