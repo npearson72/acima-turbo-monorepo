@@ -1,5 +1,5 @@
 import express, { Express } from 'express';
-import { todosRouter, usersRouter } from './api';
+import routes from './api/routes';
 
 const app: Express = express();
 const port = 4000;
@@ -12,8 +12,7 @@ const middleware = [
 
 app.use(middleware);
 
-app.use('/api/v1/todos', todosRouter);
-app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/', routes);
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
