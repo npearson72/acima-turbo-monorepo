@@ -1,6 +1,7 @@
 module.exports = {
   rules: {
     '@typescript-eslint/comma-dangle': 'off',
+    '@typescript-eslint/lines-between-class-members': 'off',
     '@typescript-eslint/naming-convention': [
       'error',
       {
@@ -14,6 +15,7 @@ module.exports = {
     'arrow-parens': ['error', 'as-needed'],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/prefer-default-export': 'off',
+    'max-classes-per-file': 'off',
     'max-len': ['error', { code: 80 }],
     'object-curly-newline': 'off'
   },

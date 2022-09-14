@@ -19,5 +19,6 @@
     "stories": {
       "outputs": []
     }
-  }
+  },
+  "globalDependencies": ["$SERVER_PORT"]
 }

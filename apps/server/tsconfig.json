@@ -4,7 +4,11 @@
     "outDir": "../../dist/apps/server",
     "rootDir": "src",
     "paths": {
-      "@db/*": ["./src/db/*"]
+      "@configs/*": ["./src/configs/*"],
+      "@db/*": ["./src/db/*"],
+      "@domains/*": ["./src/domains/*"],
+      "@utils": ["./src/utils"],
+      "@utils/*": ["./src/utils/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
