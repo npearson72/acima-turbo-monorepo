@@ -16,7 +16,7 @@ export default defineConfig({
   },
   build: {
     emptyOutDir: true,
-    outDir: '../../dist/apps/mobile',
+    outDir: 'dist',
     sourcemap: true
   },
   esbuild: {

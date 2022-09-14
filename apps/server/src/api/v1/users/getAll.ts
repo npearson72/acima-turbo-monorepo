@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import prisma from '@db/prisma';
+import prisma from '@configs/prisma';
 
 const getAll = async (_req: Request, res: Response) => {
   const users = await prisma.user.findMany({ orderBy: { id: 'asc' } });

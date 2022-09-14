@@ -10,13 +10,13 @@ module.exports = merge(common, {
     new BundleAnalyzerPlugin({
       openAnalyzer: true,
       analyzerMode: 'static',
-      reportFilename: path.resolve(__dirname, '../../stats/extension.html')
+      reportFilename: path.resolve(__dirname, 'stats/extension.html')
     }),
     new CopyPlugin({
       patterns: [
         {
           from: path.resolve('src/assets/manifest.json'),
-          to: path.resolve(__dirname, '../../dist/apps/extension')
+          to: path.resolve(__dirname, 'dist')
         }
       ]
     })

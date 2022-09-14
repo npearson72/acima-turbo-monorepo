@@ -15,12 +15,12 @@ export default defineConfig({
       open: true,
       gzipSize: true,
       brotliSize: true,
-      filename: '../../stats/web.html'
+      filename: 'stats/web.html'
     })
   ],
   build: {
     emptyOutDir: true,
-    outDir: '../../dist/apps/web',
+    outDir: 'dist',
     rollupOptions: {
       output: {
         manualChunks: id => {

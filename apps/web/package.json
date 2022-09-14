@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
+    "clear:dist": "rm -rf dist",
     "lint": "eslint src --quiet",
     "preview": "vite preview"
   },

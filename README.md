@@ -2,8 +2,8 @@
 
 ## Server
 
-Use the following command to run the server after build:
+Use the following command to preview the server after build:
 
 ```sh
-node --enable-source-maps dist/apps/server/index.js
+node --enable-source-maps apps/server/dist/index.js
 ```

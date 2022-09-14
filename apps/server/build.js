@@ -3,12 +3,12 @@ require('esbuild')
   .build({
     platform: 'node',
     logLevel: 'error',
-    entryPoints: ['./src/index.ts'],
+    entryPoints: ['src/index.ts'],
     bundle: true,
     minify: true,
     keepNames: true,
     sourcemap: 'linked',
     sourcesContent: false,
-    outfile: '../../dist/apps/server/index.js'
+    outfile: 'dist/index.js'
   })
   .catch(() => process.exit(1));

@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vite",
     "dev:ios": "ionic cap run ios -l --external --target 000BA31B-6962-4086-A3AC-6CD841B7B3E5",
+    "clear:dist": "rm -rf dist",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "ionic:build": "yarn build",

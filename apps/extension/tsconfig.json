@@ -1,7 +1,7 @@
 {
   "extends": "@acima/tsconfig/react.json",
   "compilerOptions": {
-    "outDir": "../../dist/apps/extension",
+    "outDir": "dist",
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react"
   },

@@ -25,7 +25,7 @@ module.exports = merge(common, {
       patterns: [
         {
           from: path.resolve('src/assets/manifest.json'),
-          to: path.resolve(__dirname, '../../dist/apps/extension'),
+          to: path.resolve(__dirname, 'dist'),
           transform: content => {
             return updateManifest(content);
           }

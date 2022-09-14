@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'dev.acima.mobile',
   appName: 'Acima',
-  webDir: '../../dist/apps/mobile',
+  webDir: 'dist',
   bundledWebRuntime: false
 };
 

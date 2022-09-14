@@ -4,6 +4,9 @@
     "build": {
       "dependsOn": ["^build"]
     },
+    "clear:dist": {
+      "outputs": []
+    },
     "dev": {
       "cache": false
     },
