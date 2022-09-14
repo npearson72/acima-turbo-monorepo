@@ -2,7 +2,10 @@
   "extends": "@acima/tsconfig/base.json",
   "compilerOptions": {
     "outDir": "../../dist/apps/server",
-    "rootDir": "src"
+    "rootDir": "src",
+    "paths": {
+      "@db/*": ["./src/db/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]
