@@ -1,22 +1,18 @@
 import db from '@utils/db';
-import { serviceResult } from '@utils';
+import { successResult, failureResult } from '@utils/serviceResults';
+import type { Todo } from '../types';
 
-interface Props {
-  id: string | number;
-  complete: boolean;
-}
-
-const updateAction = async ({ id, complete }: Props) => {
+const updateAction = async ({ id, title, complete }: Partial<Todo>) => {
   try {
     const todo = await db.todo.update({
-      where: { id: Number(id) },
-      data: { complete }
+      where: { id },
+      data: { title, complete }
     });
 
-    return serviceResult({ data: todo });
+    return successResult({ todo });
   } catch (e: any) {
     if (e.code && e.code === 'P2025') {
-      return serviceResult({ error: { code: 'RecordNotFound' } });
+      return failureResult({ type: 'RecordNotFound' });
     }
 
     throw e;

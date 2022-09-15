@@ -1,13 +1,17 @@
 import db from '@utils/db';
-import { serviceResult } from '@utils';
+import { successResult, failureResult } from '@utils/serviceResults';
+import type { NewUser, User } from '../types';
 
-interface Props {
-  firstName: string;
-  lastName: string;
-  email: string;
-}
+type Result = {
+  success: boolean;
+  user: User;
+};
 
-const createAction = async ({ firstName, lastName, email }: Props) => {
+const createAction = async ({
+  firstName,
+  lastName,
+  email
+}: NewUser): Promise<Result> => {
   try {
     const user = await db.user.create({
       data: {
@@ -17,10 +21,10 @@ const createAction = async ({ firstName, lastName, email }: Props) => {
       }
     });
 
-    return serviceResult({ data: user });
+    return successResult({ user });
   } catch (e: any) {
     if (e.code && e.code === 'P2002') {
-      return serviceResult({ error: { code: 'RecordNotUnique' } });
+      return failureResult({ type: 'RecordNotUnique' }) as any;
     }
 
     throw e;

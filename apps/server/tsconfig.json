@@ -4,6 +4,7 @@
     "outDir": "dist",
     "rootDir": "src",
     "paths": {
+      "@api/*": ["./src/api/*"],
       "@configs/*": ["./src/configs/*"],
       "@db/*": ["./src/db/*"],
       "@domains/*": ["./src/domains/*"],

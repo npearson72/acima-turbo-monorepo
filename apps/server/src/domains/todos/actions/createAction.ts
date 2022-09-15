@@ -1,28 +1,29 @@
 import db from '@utils/db';
-import { serviceResult } from '@utils';
+import { successResult, failureResult } from '@utils/serviceResults';
+import type { NewTodo, Todo } from '../types';
 
-interface Props {
-  title: string;
-  userId?: string | number;
-}
+type Result = {
+  success: boolean;
+  todo: Todo;
+};
 
-const createAction = async ({ title, userId }: Props) => {
-  // TODO: Pass userId once authentication is added
-
+// TODO: Pass userId once authentication is added
+const createAction = async ({ title, complete }: NewTodo): Promise<Result> => {
   const user = await db.user.findFirst();
 
   if (!user) {
-    return serviceResult({ error: { code: 'UserNotFound' } });
+    return failureResult({ type: 'UserNotFound' }) as any;
   }
 
   const todo = await db.todo.create({
     data: {
       title,
+      complete,
       user: { connect: { id: user.id } }
     }
   });
 
-  return serviceResult({ data: todo });
+  return successResult({ todo });
 };
 
 export { createAction };

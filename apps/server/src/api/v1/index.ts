@@ -1,6 +1,6 @@
 import express from 'express';
-import todos from './todos';
-import users from './users';
+import todos from './todos/controller';
+import users from './users/controller';
 
 const router = express.Router();
 

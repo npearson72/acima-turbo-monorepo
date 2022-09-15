@@ -6,11 +6,11 @@ const destroy = async (req: Request, res: Response) => {
 
   const result = await destroyAction({ id });
 
-  if (result.isSuccess) {
+  if (result.success) {
     return res.sendStatus(200);
   }
 
-  return res.status(422).json({ error: result.error });
+  return res.status(422).json(result);
 };
 
 export default destroy;

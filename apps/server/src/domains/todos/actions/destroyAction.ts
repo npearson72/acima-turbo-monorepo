@@ -1,20 +1,16 @@
 import db from '@utils/db';
-import { serviceResult } from '@utils';
+import { successResult, failureResult } from '@utils/serviceResults';
 
-interface Props {
-  id: string;
-}
-
-const destroyAction = async ({ id }: Props) => {
+const destroyAction = async ({ id }: { id: string }) => {
   try {
     await db.todo.delete({
       where: { id: Number(id) }
     });
 
-    return serviceResult({});
+    return successResult({});
   } catch (e: any) {
     if (e.code && e.code === 'P2025') {
-      return serviceResult({ error: { code: 'RecordNotFound' } });
+      return failureResult({ type: 'RecordNotFound' });
     }
 
     throw e;
