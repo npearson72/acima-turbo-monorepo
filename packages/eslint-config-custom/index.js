@@ -8,5 +8,12 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest'
   },
-  ignorePatterns: ['node_modules', 'dist', 'build', '!.*rc.js']
+  ignorePatterns: [
+    'node_modules',
+    'dist',
+    'build',
+    'ios',
+    'android',
+    '!.*rc.js'
+  ]
 };

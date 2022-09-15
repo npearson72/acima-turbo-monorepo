@@ -28,5 +28,12 @@ module.exports = {
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'react/prop-types': 'off'
   },
-  ignorePatterns: ['node_modules', 'dist', 'build', '!.*rc.js']
+  ignorePatterns: [
+    'node_modules',
+    'dist',
+    'build',
+    'ios',
+    'android',
+    '!.*rc.js'
+  ]
 };
