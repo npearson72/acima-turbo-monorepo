@@ -8,15 +8,23 @@ interface Props {
 }
 
 const createAction = async ({ firstName, lastName, email }: Props) => {
-  const user = await db.user.create({
-    data: {
-      firstName,
-      lastName,
-      email
-    }
-  });
+  try {
+    const user = await db.user.create({
+      data: {
+        firstName,
+        lastName,
+        email
+      }
+    });
 
-  return serviceResult({ data: user });
+    return serviceResult({ data: user });
+  } catch (e: any) {
+    if (e.code && e.code === 'P2002') {
+      return serviceResult({ error: { code: 'RecordNotUnique' } });
+    }
+
+    throw e;
+  }
 };
 
 export { createAction };
