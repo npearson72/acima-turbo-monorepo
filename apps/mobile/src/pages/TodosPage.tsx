@@ -1,20 +1,13 @@
-import { CounterButton } from '@acima/ui/components';
-import { css } from '@emotion/react';
+import { Todos } from '@acima/ui/features/todos';
 import PageWrapper from './PageWrapper';
-
-const style = css`
-  button {
-    margin-top: 5rem;
-  }
-`;
 
 const TodosPage: React.FC = () => {
   return (
-    <PageWrapper css={style}>
+    <PageWrapper>
       <h1>Todos</h1>
-      <CounterButton />
+      <Todos />
     </PageWrapper>
   );
 };
 
-export default TodosPage;
+export { TodosPage };

@@ -6,4 +6,4 @@ const ProgressPage: React.FC = () => (
   </PageWrapper>
 );
 
-export default ProgressPage;
+export { ProgressPage };

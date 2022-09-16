@@ -6,7 +6,7 @@
 export default {
   stories: [
     'src/**/*.story.{js,jsx,ts,tsx}',
-    '../ui/components/**/*.story.{js,jsx,ts,tsx}'
+    '../ui/**/*.story.{js,jsx,ts,tsx}'
   ],
   addons: {
     rtl: {

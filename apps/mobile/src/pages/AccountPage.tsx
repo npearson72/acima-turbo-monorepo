@@ -6,4 +6,4 @@ const AccountPage: React.FC = () => (
   </PageWrapper>
 );
 
-export default AccountPage;
+export { AccountPage };

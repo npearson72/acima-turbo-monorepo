@@ -1,5 +1,3 @@
-import TodosPage from './TodosPage';
-import ProgressPage from './ProgressPage';
-import AccountPage from './AccountPage';
-
-export { TodosPage, ProgressPage, AccountPage };
+export * from './TodosPage';
+export * from './ProgressPage';
+export * from './AccountPage';

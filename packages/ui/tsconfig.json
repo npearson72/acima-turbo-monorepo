@@ -1,6 +1,7 @@
 {
   "extends": "@acima/tsconfig/react.json",
   "compilerOptions": {
+    "jsxImportSource": "@emotion/react",
     "rootDir": "."
   },
   "include": ["**/*.ts", "**/*.tsx"]

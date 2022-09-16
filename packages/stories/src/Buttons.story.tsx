@@ -7,7 +7,7 @@ const style = css`
 `;
 
 export default {
-  title: 'Primitive / Buttons'
+  title: 'Primitives / Buttons'
 };
 
 export const Story = () => {

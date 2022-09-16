@@ -1,18 +1,16 @@
-import { CounterButton } from '@acima/ui/components';
+import { Todos } from '@acima/ui/features/todos';
 import { css } from '@emotion/react';
 
 const style = css`
-  align-items: center;
-  display: flex;
-  height: 400px;
-  justify-content: center;
-  width: 400px;
+  padding: 2rem;
+  height: 600px;
+  width: 500px;
 `;
 
 const App: React.FC = () => {
   return (
     <div css={style}>
-      <CounterButton />
+      <Todos />
     </div>
   );
 };
