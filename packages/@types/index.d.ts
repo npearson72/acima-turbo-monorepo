@@ -1,7 +1,8 @@
 import type {
   MantineThemeOverride,
   ButtonProps,
-  CheckboxProps
+  CheckboxProps,
+  PaperProps
 } from '@mantine/core';
 
 declare namespace Acima {
@@ -15,6 +16,9 @@ declare namespace Acima {
       };
       Checkbox: {
         defaultProps: Pick<CheckboxProps, 'color' | 'size' | 'radius'>;
+      };
+      Paper: {
+        defaultProps: Pick<PaperProps, 'radius'>;
       };
     };
     other: {

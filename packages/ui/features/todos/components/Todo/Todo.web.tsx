@@ -43,7 +43,6 @@ const TodoWeb: React.FC<Props> = ({ id, title, isChecked, handleCheck }) => {
 
   return (
     <Paper
-      radius={0}
       p="md"
       mb={-1}
       withBorder
