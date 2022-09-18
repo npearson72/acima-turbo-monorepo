@@ -19,8 +19,6 @@ const Checkbox: React.FC<Props> = ({ id, title, isChecked, handleCheck }) => {
   return (
     <MantineCheckbox
       css={style}
-      size="md"
-      radius="xl"
       value={id}
       checked={isChecked}
       onChange={handleCheck}

@@ -9,7 +9,9 @@ const theme1: Acima.Theme = {
     },
     Checkbox: {
       defaultProps: {
-        color: 'blue.6'
+        color: 'blue.6',
+        radius: 'xl',
+        size: 'md'
       }
     }
   },
@@ -31,7 +33,8 @@ const theme2: Acima.Theme = {
     },
     Checkbox: {
       defaultProps: {
-        color: 'grape.6'
+        color: 'grape.6',
+        size: 'sm'
       }
     }
   },
