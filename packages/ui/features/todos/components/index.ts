@@ -1,2 +1,2 @@
-export * from './TodoList/index';
-export * from './Todo/index';
+export * from './TodoList';
+export * from './Todo';

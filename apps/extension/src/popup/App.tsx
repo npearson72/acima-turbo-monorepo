@@ -1,4 +1,4 @@
-import { Todos } from '@acima/ui/features/todos';
+import { Todos } from '@acima/ui/features';
 import { css } from '@emotion/react';
 
 const style = css`

@@ -1,23 +1,13 @@
-import { TodoList, Todo } from './components';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { TodosView } from './views';
 
-const todos = [
-  { id: 1, title: 'Eat', complete: false },
-  { id: 2, title: 'Sleep', complete: false },
-  { id: 3, title: 'Code', complete: false }
-];
+const queryClient = new QueryClient();
 
 const Todos: React.FC = () => {
   return (
-    <TodoList>
-      {todos.map(todo => (
-        <Todo
-          key={todo.id}
-          id={todo.id}
-          title={todo.title}
-          complete={todo.complete}
-        />
-      ))}
-    </TodoList>
+    <QueryClientProvider client={queryClient}>
+      <TodosView />
+    </QueryClientProvider>
   );
 };
 
