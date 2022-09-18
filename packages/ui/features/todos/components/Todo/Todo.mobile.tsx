@@ -24,6 +24,8 @@ const style = css`
   }
 
   .btn-delete {
+    text-align: center;
+
     .icon {
       font-size: 1.7em;
     }

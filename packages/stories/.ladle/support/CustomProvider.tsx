@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { MantineProvider } from '@mantine/core';
 import { themePacks, themeSelector } from '@acima/ui/themes';
-import SelectTheme from './SelectTheme';
+import { SelectTheme } from './SelectTheme';
 
 const themeIds = themePacks.map(theme => theme.id);
 
@@ -42,4 +42,4 @@ const CustomProvider: React.FC<Props> = ({ children }) => {
   );
 };
 
-export default CustomProvider;
+export { CustomProvider };

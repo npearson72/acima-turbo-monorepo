@@ -1,0 +1,23 @@
+/* Core CSS required for Ionic components to work properly */
+@use '@ionic/react/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+@use '@ionic/react/css/normalize.css';
+@use '@ionic/react/css/structure.css';
+@use '@ionic/react/css/typography.css';
+
+/* Optional CSS utils that can be commented out */
+@use '@ionic/react/css/padding.css';
+@use '@ionic/react/css/float-elements.css';
+@use '@ionic/react/css/text-alignment.css';
+@use '@ionic/react/css/text-transformation.css';
+@use '@ionic/react/css/flex-utils.css';
+@use '@ionic/react/css/display.css';
+
+html {
+  &.ion-ce {
+    body {
+      display: contents;
+    }
+  }
+}

@@ -1,20 +1,24 @@
 import type { Story } from '@ladle/react';
-import { Todo } from '..';
+import { Todo } from '.';
 
 export default {
   title: 'Features / Todos'
 };
 
+const props = {
+  id: 1,
+  title: 'Example',
+  complete: false
+};
+
 export const TodoStory: Story<{
-  title: string;
-  complete: boolean;
-}> = ({ title, complete }) => {
-  return <Todo id={1} title={title} complete={complete} />;
+  mobile: boolean;
+}> = ({ mobile }) => {
+  return <Todo {...props} story={{ mobile }} />;
 };
 
 TodoStory.storyName = 'Todo';
 
 TodoStory.args = {
-  title: 'Example todo',
-  complete: false
+  mobile: false
 };

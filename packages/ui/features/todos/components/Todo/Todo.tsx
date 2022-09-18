@@ -7,9 +7,12 @@ interface Props {
   id: number;
   title: string;
   complete: boolean;
+  story?: {
+    [key: string]: any;
+  };
 }
 
-const Todo: React.FC<Props> = ({ id, title, complete }) => {
+const Todo: React.FC<Props> = ({ id, title, complete, story }) => {
   const [isChecked, setIsChecked] = useState(complete);
 
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +21,7 @@ const Todo: React.FC<Props> = ({ id, title, complete }) => {
     setIsChecked(checked);
   };
 
-  if (isPlatform('mobile')) {
+  if (story?.mobile || isPlatform('mobile')) {
     return (
       <TodoMobile
         id={id}

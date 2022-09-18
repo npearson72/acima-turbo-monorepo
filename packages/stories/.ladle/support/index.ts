@@ -1,3 +1,1 @@
-import CustomProvider from './CustomProvider';
-
-export { CustomProvider };
+export * from './CustomProvider';

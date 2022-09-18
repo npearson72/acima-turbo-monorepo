@@ -28,4 +28,4 @@ const SelectTheme: React.FC<Props> = ({ themePacks, setThemeId }) => {
   );
 };
 
-export default SelectTheme;
+export { SelectTheme };
