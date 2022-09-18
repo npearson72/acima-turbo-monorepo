@@ -7,9 +7,7 @@ interface Props {
   id: number;
   title: string;
   complete: boolean;
-  story?: {
-    [key: string]: any;
-  };
+  story?: Record<string, any>;
 }
 
 const Todo: React.FC<Props> = ({ id, title, complete, story }) => {

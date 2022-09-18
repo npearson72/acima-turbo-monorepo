@@ -5,7 +5,7 @@
       "dependsOn": ["^build"]
     },
     "clear:dist": {
-      "outputs": []
+      "cache": false
     },
     "dev": {
       "cache": false
@@ -20,7 +20,7 @@
       "dependsOn": ["build"]
     },
     "stories": {
-      "outputs": []
+      "cache": false
     }
   },
   "globalDependencies": ["$SERVER_PORT"]

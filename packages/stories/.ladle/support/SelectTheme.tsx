@@ -7,11 +7,11 @@ const style = css`
 `;
 
 interface Props {
-  themePacks: Acima.ThemePack[];
+  themes: Acima.Theme[];
   setThemeId: Dispatch<SetStateAction<string>>;
 }
 
-const SelectTheme: React.FC<Props> = ({ themePacks, setThemeId }) => {
+const SelectTheme: React.FC<Props> = ({ themes, setThemeId }) => {
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setThemeId(event.target.value);
   };
@@ -20,9 +20,9 @@ const SelectTheme: React.FC<Props> = ({ themePacks, setThemeId }) => {
     <NativeSelect
       css={style}
       onChange={handleChange}
-      data={themePacks.map(themePack => ({
-        value: themePack.id,
-        label: themePack.name
+      data={themes.map(theme => ({
+        value: theme.other.id,
+        label: theme.other.name
       }))}
     />
   );
