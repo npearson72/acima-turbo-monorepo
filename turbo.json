@@ -23,5 +23,5 @@
       "cache": false
     }
   },
-  "globalDependencies": ["$SERVER_PORT"]
+  "globalDependencies": ["$SERVER_PORT", "$NODE_ENV"]
 }
