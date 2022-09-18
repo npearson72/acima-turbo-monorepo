@@ -1,4 +1,4 @@
-import { object, string, number } from 'yup';
+import { object, string } from 'yup';
 
 const newUserSchema = object({
   firstName: string().required(),
@@ -6,8 +6,4 @@ const newUserSchema = object({
   email: string().email().required()
 });
 
-const userSchema = newUserSchema.shape({
-  id: number().required()
-});
-
-export { newUserSchema, userSchema };
+export { newUserSchema };

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
+import { validateSchema } from '@utils';
 import { createAction } from '@domains/todos/actions';
-import { validateSchema } from '@utils/validateSchema';
 import { newTodoSchema } from '../schemas';
 import { todoEntity } from '../entities';
 

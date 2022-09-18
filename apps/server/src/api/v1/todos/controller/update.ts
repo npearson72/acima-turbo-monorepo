@@ -1,12 +1,15 @@
 import { Request, Response } from 'express';
+import { validateSchema } from '@utils';
 import { updateAction } from '@domains/todos/actions';
-import { validateSchema } from '@utils/validateSchema';
-import { todoSchema } from '../schemas';
+import { updateTodoSchema } from '../schemas';
 import { todoEntity } from '../entities';
 
 const update = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const todo = await validateSchema({ ...req.body, id, userId: 1 }, todoSchema);
+  const todo = await validateSchema(
+    { ...req.body, id, userId: 1 },
+    updateTodoSchema
+  );
 
   const result = await updateAction(todo);
 

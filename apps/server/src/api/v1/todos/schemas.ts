@@ -6,8 +6,11 @@ const newTodoSchema = object({
   userId: number().required()
 });
 
-const todoSchema = newTodoSchema.shape({
-  id: number().required()
+const updateTodoSchema = object({
+  id: number().required(),
+  title: string().optional(),
+  complete: boolean().optional(),
+  userId: number().required()
 });
 
-export { newTodoSchema, todoSchema };
+export { newTodoSchema, updateTodoSchema };
