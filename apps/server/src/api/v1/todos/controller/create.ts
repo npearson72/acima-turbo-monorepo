@@ -1,10 +1,11 @@
 import { Request, Response } from 'express';
 import { createAction } from '@domains/todos/actions';
-import { validateNewTodoSchema } from '../schemas';
+import { validateSchema } from '@utils/validateSchema';
+import { newTodoSchema } from '../schemas';
 import { todoEntity } from '../entities';
 
 const create = async (req: Request, res: Response) => {
-  const todo = await validateNewTodoSchema({ ...req.body, userId: 1 });
+  const todo = await validateSchema({ ...req.body, userId: 1 }, newTodoSchema);
 
   const result = await createAction(todo);
 

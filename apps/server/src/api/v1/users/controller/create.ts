@@ -1,10 +1,11 @@
 import { Request, Response } from 'express';
 import { createAction } from '@domains/users/actions';
-import { validateNewUserSchema } from '../schemas';
+import { validateSchema } from '@utils/validateSchema';
+import { newUserSchema } from '../schemas';
 import { userEntity } from '../entities';
 
 const create = async (req: Request, res: Response) => {
-  const user = await validateNewUserSchema(req.body);
+  const user = await validateSchema(req.body, newUserSchema);
 
   const result = await createAction(user);
 
