@@ -1,14 +1,26 @@
+import type {
+  MantineThemeOverride,
+  ButtonProps,
+  CheckboxProps
+} from '@mantine/core';
+
 declare namespace Acima {
   interface Theme extends MantineThemeOverride {
-    components?: {
-      Button?: {
-        defaultProps: Partial<ButtonProps>;
+    components: {
+      Button: {
+        defaultProps: Pick<
+          ButtonProps,
+          'color' | 'radius' | 'size' | 'uppercase'
+        >;
       };
-      Checkbox?: {
-        defaultProps: Partial<CheckboxProps>;
+      Checkbox: {
+        defaultProps: Pick<CheckboxProps, 'color' | 'size' | 'radius'>;
       };
     };
-    other: Record<string, any>;
+    other: {
+      id: string;
+      name: string;
+    };
   }
 }
 

@@ -1,6 +1,8 @@
 module.exports = {
   rules: {
     '@typescript-eslint/comma-dangle': 'off',
+    // https://github.com/typescript-eslint/typescript-eslint/issues/1824
+    '@typescript-eslint/indent': 'off',
     '@typescript-eslint/lines-between-class-members': 'off',
     '@typescript-eslint/naming-convention': [
       'error',
