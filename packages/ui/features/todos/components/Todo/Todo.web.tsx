@@ -34,7 +34,7 @@ interface Props {
   handleCheck: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const TodoWeb: React.FC<Props> = ({ id, title, isChecked, handleCheck }) => {
+const TodoWeb: React.FC<Props> = props => {
   const [showTrash, setShowTrash] = useState(false);
 
   const toggleTrash = () => {
@@ -51,12 +51,7 @@ const TodoWeb: React.FC<Props> = ({ id, title, isChecked, handleCheck }) => {
       onMouseLeave={toggleTrash}
     >
       <Group position="apart">
-        <Checkbox
-          id={id}
-          title={title}
-          isChecked={isChecked}
-          handleCheck={handleCheck}
-        />
+        <Checkbox {...props} />
         <Icon
           icon="icons8:trash"
           className={`icon-trash ${showTrash ? 'show' : ''}`}

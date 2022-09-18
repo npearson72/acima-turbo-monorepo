@@ -10,7 +10,8 @@ interface Props {
   story?: Record<string, any>;
 }
 
-const Todo: React.FC<Props> = ({ id, title, complete, story }) => {
+const Todo: React.FC<Props> = props => {
+  const { complete, story } = props;
   const [isChecked, setIsChecked] = useState(complete);
 
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,23 +22,11 @@ const Todo: React.FC<Props> = ({ id, title, complete, story }) => {
 
   if (story?.mobile || isPlatform('mobile')) {
     return (
-      <TodoMobile
-        id={id}
-        title={title}
-        isChecked={isChecked}
-        handleCheck={handleCheck}
-      />
+      <TodoMobile {...props} isChecked={isChecked} handleCheck={handleCheck} />
     );
   }
 
-  return (
-    <TodoWeb
-      id={id}
-      title={title}
-      isChecked={isChecked}
-      handleCheck={handleCheck}
-    />
-  );
+  return <TodoWeb {...props} isChecked={isChecked} handleCheck={handleCheck} />;
 };
 
 export { Todo };

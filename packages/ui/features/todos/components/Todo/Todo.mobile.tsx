@@ -43,16 +43,11 @@ interface Props {
   handleCheck: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const TodoMobile: React.FC<Props> = ({ id, title, isChecked, handleCheck }) => {
+const TodoMobile: React.FC<Props> = props => {
   return (
     <IonItemSliding css={style}>
       <IonItem>
-        <Checkbox
-          id={id}
-          title={title}
-          isChecked={isChecked}
-          handleCheck={handleCheck}
-        />
+        <Checkbox {...props} />
       </IonItem>
 
       <IonItemOptions side="end">
