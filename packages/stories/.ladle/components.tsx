@@ -1,10 +1,17 @@
 import { GlobalProvider } from '@ladle/react';
 import { setupIonicReact } from '@ionic/react';
-import { CustomProvider } from './support';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { ThemeProvider } from './support';
 import './ionic.scss';
 
 setupIonicReact();
 
+const queryClient = new QueryClient();
+
 export const Provider: GlobalProvider = ({ children }) => {
-  return <CustomProvider>{children}</CustomProvider>;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>{children}</ThemeProvider>
+    </QueryClientProvider>
+  );
 };

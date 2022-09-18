@@ -11,9 +11,7 @@ const props = {
   complete: false
 };
 
-export const TodoStory: Story<{
-  mobile: boolean;
-}> = ({ mobile }) => {
+export const TodoStory: Story<{ mobile: boolean }> = ({ mobile }) => {
   return <Todo {...props} story={{ mobile }} />;
 };
 

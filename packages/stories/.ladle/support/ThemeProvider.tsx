@@ -10,7 +10,7 @@ interface Props {
   children: any;
 }
 
-const CustomProvider: React.FC<Props> = ({ children }) => {
+const ThemeProvider: React.FC<Props> = ({ children }) => {
   const [themeId, setThemeId] = useState(themeIds[0]);
 
   useEffect(() => {
@@ -42,4 +42,4 @@ const CustomProvider: React.FC<Props> = ({ children }) => {
   );
 };
 
-export { CustomProvider };
+export { ThemeProvider };
