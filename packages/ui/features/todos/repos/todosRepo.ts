@@ -19,6 +19,12 @@ const todosRepo = {
     const { data } = await client.patch(`todos/${params.id}`, params);
 
     return data;
+  },
+
+  async delete({ id }: { id: number }) {
+    const { data } = await client.delete(`todos/${id}`);
+
+    return data;
   }
 };
 

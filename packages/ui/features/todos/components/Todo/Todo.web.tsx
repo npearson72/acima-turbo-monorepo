@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { Paper, Group } from '@mantine/core';
 import { css } from '@emotion/react';
 import { Icon } from '@iconify/react';
 import { Checkbox } from './Checkbox';
+import { todosRepo } from '../../repos';
 
 const style = css`
   border: 1px solid #dfdfdf;
@@ -35,10 +37,23 @@ interface Props {
 }
 
 const TodoWeb: React.FC<Props> = props => {
+  const { id } = props;
   const [showTrash, setShowTrash] = useState(false);
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation(todosRepo.delete, {
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries(['todos']);
+    }
+  });
 
   const toggleTrash = () => {
     setShowTrash(!showTrash);
+  };
+
+  const deleteTodo = () => {
+    mutation.mutate({ id: Number(id) });
   };
 
   return (
@@ -55,6 +70,7 @@ const TodoWeb: React.FC<Props> = props => {
         <Icon
           icon="icons8:trash"
           className={`icon-trash ${showTrash ? 'show' : ''}`}
+          onClick={deleteTodo}
         />
       </Group>
     </Paper>

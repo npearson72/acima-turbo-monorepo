@@ -16,6 +16,10 @@ const mockHttpClient = {
 
   patch: async (path: string, params: Record<string, any>) => {
     return { data: {} };
+  },
+
+  delete: async (path: string) => {
+    return { data: {} };
   }
 };
 /* eslint-enable @typescript-eslint/no-unused-vars */

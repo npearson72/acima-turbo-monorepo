@@ -1,3 +1,4 @@
+import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { css } from '@emotion/react';
 import { Icon } from '@iconify/react';
 import {
@@ -7,6 +8,7 @@ import {
   IonItemOption
 } from '@ionic/react';
 import { Checkbox } from './Checkbox';
+import { todosRepo } from '../../repos';
 
 const style = css`
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -44,6 +46,21 @@ interface Props {
 }
 
 const TodoMobile: React.FC<Props> = props => {
+  const { id } = props;
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation(todosRepo.delete, {
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries(['todos']);
+    }
+  });
+
+  const deleteTodo = () => {
+    mutation.mutate({ id: Number(id) });
+  };
+
   return (
     <IonItemSliding css={style}>
       <IonItem>
@@ -51,7 +68,7 @@ const TodoMobile: React.FC<Props> = props => {
       </IonItem>
 
       <IonItemOptions side="end">
-        <IonItemOption color="danger">
+        <IonItemOption color="danger" onClick={deleteTodo}>
           <div className="btn-delete">
             <Icon icon="icons8:trash" className="icon" />
             <div className="text">Delete</div>
