@@ -16,8 +16,7 @@ export default defineConfig({
   },
   build: {
     emptyOutDir: true,
-    outDir: 'dist',
-    sourcemap: true
+    outDir: 'dist'
   },
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' }

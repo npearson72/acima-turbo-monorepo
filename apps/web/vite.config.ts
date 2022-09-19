@@ -20,18 +20,7 @@ export default defineConfig({
   ],
   build: {
     emptyOutDir: true,
-    outDir: 'dist',
-    rollupOptions: {
-      output: {
-        manualChunks: id => {
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
-
-          return undefined;
-        }
-      }
-    }
+    outDir: 'dist'
   },
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' }
