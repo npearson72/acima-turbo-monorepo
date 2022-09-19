@@ -29,16 +29,22 @@ const Form: React.FC<Props> = ({ setOpened }) => {
     }
   });
 
-  const updateTaskName = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeTaskName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
   const addTodo = () => {
-    mutation.mutate({
-      title: value
-    });
+    if (value) {
+      mutation.mutate({ title: value });
+    }
 
     setOpened(false);
+  };
+
+  const tryAddTodo = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      addTodo();
+    }
   };
 
   return (
@@ -48,7 +54,8 @@ const Form: React.FC<Props> = ({ setOpened }) => {
         size="md"
         placeholder="Task name"
         value={value}
-        onChange={updateTaskName}
+        onChange={changeTaskName}
+        onKeyUp={tryAddTodo}
       />
       <div className="btn-bar">
         <Button
