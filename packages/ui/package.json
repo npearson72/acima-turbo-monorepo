@@ -21,7 +21,6 @@
     "@acima/eslint-config-custom": "*",
     "@acima/tsconfig": "*",
     "@babel/core": "^7.19.0",
-    "@types/acima": "*",
     "@types/react": "^18.0.19",
     "@types/react-dom": "^18.0.6",
     "typescript": "^4.8.2"

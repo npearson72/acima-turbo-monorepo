@@ -23,7 +23,6 @@
   "devDependencies": {
     "@acima/eslint-config-custom": "*",
     "@acima/tsconfig": "*",
-    "@types/acima": "*",
     "@types/express": "^4.17.13",
     "@types/node": "^18.7.15",
     "esbuild": "^0.15.7",

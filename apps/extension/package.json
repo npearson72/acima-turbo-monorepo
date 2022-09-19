@@ -22,7 +22,6 @@
     "@emotion/react": "^11.10.4",
     "@mantine/core": "^5.3.0",
     "@mantine/hooks": "^5.3.0",
-    "@types/acima": "*",
     "@types/chrome": "^0.0.196",
     "@types/node": "^18.7.16",
     "@types/react": "^18.0.19",

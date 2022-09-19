@@ -42,7 +42,6 @@
     "@babel/core": "^7.19.0",
     "@capacitor/cli": "^4.0.1",
     "@emotion/babel-plugin": "^11.10.2",
-    "@types/acima": "*",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/react-router": "^5.1.18",
