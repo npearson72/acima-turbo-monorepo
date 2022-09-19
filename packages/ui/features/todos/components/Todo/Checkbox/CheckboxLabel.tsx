@@ -13,7 +13,7 @@ interface Props {
 }
 const CheckboxLabel: React.FC<Props> = ({ title, isChecked }) => {
   return (
-    <Text size="xl" css={style} className={`${isChecked ? 'checked' : ''}`}>
+    <Text size="md" css={style} className={`${isChecked ? 'checked' : ''}`}>
       {title}
     </Text>
   );

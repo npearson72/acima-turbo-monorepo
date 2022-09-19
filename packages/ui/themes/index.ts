@@ -11,7 +11,7 @@ const theme1: Acima.Theme = {
       defaultProps: {
         color: 'blue.6',
         radius: 'xl',
-        size: 'md'
+        size: 'sm'
       }
     },
     Paper: {

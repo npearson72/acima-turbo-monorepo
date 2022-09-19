@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { todosRepo } from '../repos';
-import { TodoList, Todo } from '../components';
+import { TodoList, Todo, AddTodoButton } from '../components';
 
 const TodosView: React.FC = () => {
   const { isLoading, data } = useQuery(['todos'], todosRepo.getAll);
@@ -8,11 +8,14 @@ const TodosView: React.FC = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <TodoList>
-      {data.todos.map((todo: any) => (
-        <Todo key={todo.id} {...todo} />
-      ))}
-    </TodoList>
+    <>
+      <AddTodoButton />
+      <TodoList>
+        {data.todos.map((todo: any) => (
+          <Todo key={todo.id} {...todo} />
+        ))}
+      </TodoList>
+    </>
   );
 };
 

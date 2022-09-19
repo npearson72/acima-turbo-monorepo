@@ -15,7 +15,7 @@ const style = css`
     color: #c5c5c5;
     cursor: pointer;
     display: none;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 
     &.show {
       display: block;
@@ -43,7 +43,7 @@ const TodoWeb: React.FC<Props> = props => {
 
   return (
     <Paper
-      p="md"
+      p="sm"
       mb={-1}
       withBorder
       css={style}
