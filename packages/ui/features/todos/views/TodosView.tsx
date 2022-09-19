@@ -1,20 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 import { todosRepo } from '../repos';
-import { TodoList, Todo, AddTodoButton } from '../components';
+import { TodoList, AddTodoButton } from '../components';
 
 const TodosView: React.FC = () => {
   const { isLoading, data } = useQuery(['todos'], todosRepo.getAll);
 
-  if (isLoading) return <div>Loading...</div>;
-
   return (
     <>
       <AddTodoButton />
-      <TodoList>
-        {data.todos.map((todo: any) => (
-          <Todo key={todo.id} {...todo} />
-        ))}
-      </TodoList>
+      <TodoList isLoading={isLoading} data={data} />
     </>
   );
 };

@@ -9,6 +9,12 @@ const todosRepo = {
     return data;
   },
 
+  async post(params: Record<string, any>) {
+    const { data } = await client.post('todos', params);
+
+    return data;
+  },
+
   async update(params: Record<string, any>) {
     const { data } = await client.patch(`todos/${params.id}`, params);
 

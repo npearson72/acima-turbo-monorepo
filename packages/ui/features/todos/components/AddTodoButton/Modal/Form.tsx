@@ -1,5 +1,8 @@
+import { useState } from 'react';
+import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { Input, Button } from '@mantine/core';
 import { css } from '@emotion/react';
+import { todosRepo } from '../../../repos';
 
 const style = css`
   .btn-bar {
@@ -11,15 +14,52 @@ const style = css`
   }
 `;
 
-const Form: React.FC = () => {
+interface Props {
+  setOpened: (value: boolean) => void;
+}
+
+const Form: React.FC<Props> = ({ setOpened }) => {
+  const [value, setValue] = useState('');
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation(todosRepo.post, {
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries(['todos']);
+    }
+  });
+
+  const updateTaskName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
+  const addTodo = () => {
+    mutation.mutate({
+      title: value
+    });
+
+    setOpened(false);
+  };
+
   return (
     <div css={style}>
-      <Input variant="unstyled" size="md" placeholder="Task name" />
+      <Input
+        variant="unstyled"
+        size="md"
+        placeholder="Task name"
+        value={value}
+        onChange={updateTaskName}
+      />
       <div className="btn-bar">
-        <Button size="sm" variant="light" className="btn-cancel">
+        <Button
+          size="sm"
+          variant="white"
+          className="btn-cancel"
+          onClick={() => setOpened(false)}
+        >
           Cancel
         </Button>
-        <Button size="sm" className="btn-add-todo">
+        <Button size="sm" className="btn-add-todo" onClick={addTodo}>
           Add todo
         </Button>
       </div>

@@ -14,7 +14,7 @@ const Modal: React.FC<Props> = ({ opened, setOpened }) => {
       withCloseButton={false}
       onClose={() => setOpened(false)}
     >
-      <Form />
+      <Form setOpened={setOpened} />
     </MantineModal>
   );
 };
