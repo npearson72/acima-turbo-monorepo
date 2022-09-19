@@ -1,71 +1,8 @@
-const theme1: Acima.Theme = {
-  components: {
-    Button: {
-      defaultProps: {
-        color: 'blue.6',
-        radius: 'sm',
-        size: 'sm'
-      }
-    },
-    Checkbox: {
-      defaultProps: {
-        color: 'blue.6',
-        radius: 'xl',
-        size: 'sm'
-      }
-    },
-    Modal: {
-      defaultProps: {
-        radius: 'xs'
-      }
-    },
-    Paper: {
-      defaultProps: {
-        radius: 'xs'
-      }
-    }
-  },
-  other: {
-    id: 'theme1',
-    name: 'Theme 1'
-  }
-};
+import theme1 from './theme1';
+import theme2 from './theme2';
 
-const theme2: Acima.Theme = {
-  components: {
-    Button: {
-      defaultProps: {
-        color: 'grape.6',
-        radius: 'xl',
-        size: 'xs',
-        uppercase: true
-      }
-    },
-    Checkbox: {
-      defaultProps: {
-        color: 'grape.6',
-        size: 'sm'
-      }
-    },
-    Modal: {
-      defaultProps: {
-        radius: 'md'
-      }
-    },
-    Paper: {
-      defaultProps: {
-        radius: 'md'
-      }
-    }
-  },
-  other: {
-    id: 'theme2',
-    name: 'Theme 2'
-  }
-};
-
-export const themes: Acima.Theme[] = [theme1, theme2];
+export const themes = [theme1, theme2];
 
 export function themeSelector(id: string) {
-  return themes.find(theme => theme.other.id === id);
+  return themes.find(theme => theme.other?.id === id);
 }

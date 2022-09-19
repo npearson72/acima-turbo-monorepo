@@ -4,7 +4,7 @@ import { MantineProvider } from '@mantine/core';
 import { themes, themeSelector } from '@acima/ui/themes';
 import { SelectTheme } from './SelectTheme';
 
-const themeIds = themes.map(theme => theme.other.id);
+const themeIds = themes.map(theme => theme.other?.id);
 
 interface Props {
   children: any;

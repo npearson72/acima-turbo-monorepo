@@ -7,7 +7,7 @@ const style = css`
 `;
 
 interface Props {
-  themes: Acima.Theme[];
+  themes: any;
   setThemeId: Dispatch<SetStateAction<string>>;
 }
 
@@ -20,7 +20,7 @@ const SelectTheme: React.FC<Props> = ({ themes, setThemeId }) => {
     <NativeSelect
       css={style}
       onChange={handleChange}
-      data={themes.map(theme => ({
+      data={themes.map((theme: any) => ({
         value: theme.other.id,
         label: theme.other.name
       }))}
