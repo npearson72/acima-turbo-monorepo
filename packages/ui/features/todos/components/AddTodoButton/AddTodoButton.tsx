@@ -1,9 +1,16 @@
+import { useState } from 'react';
 import { Button, useMantineTheme } from '@mantine/core';
 import { Icon } from '@iconify/react';
 import { css } from '@emotion/react';
+import { Modal } from './Modal';
 
-const AddTodoButton: React.FC = () => {
+interface Props {
+  story?: Record<string, any>;
+}
+
+const AddTodoButton: React.FC<Props> = ({ story }) => {
   const theme = useMantineTheme();
+  const [opened, setOpened] = useState(false);
 
   const style = css`
     margin-bottom: 1rem;
@@ -28,10 +35,13 @@ const AddTodoButton: React.FC = () => {
   `;
 
   return (
-    <Button radius="xl" variant="white" css={style}>
-      <Icon icon="ic:round-add-task" className="icon" />
-      <div className="text">Add a todo</div>
-    </Button>
+    <>
+      <Modal opened={opened} setOpened={setOpened} />
+      <Button variant="white" css={style} onClick={() => setOpened(true)}>
+        <Icon icon="ic:round-add-task" className="icon" />
+        <div className="text">Add a todo</div>
+      </Button>
+    </>
   );
 };
 

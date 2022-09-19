@@ -13,29 +13,14 @@ module.exports = {
       }
     ],
     '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/quotes': 'off',
     'arrow-body-style': 'off',
     'arrow-parens': ['error', 'as-needed'],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/prefer-default-export': 'off',
     'max-classes-per-file': 'off',
     'max-len': ['error', { code: 80 }],
-    'object-curly-newline': 'off'
-  },
-  overrides: [
-    // Use overrides for similar rules that apply to different file types
-    {
-      files: ['*.js', '*.jsx', '*.cjs', '*.mjs'],
-      rules: {
-        '@typescript-eslint/quotes': 'off',
-        quotes: ['error', 'single']
-      }
-    },
-    {
-      files: ['*.ts', '*.tsx'],
-      rules: {
-        '@typescript-eslint/quotes': ['error', 'single'],
-        quotes: 'off'
-      }
-    }
-  ]
+    'object-curly-newline': 'off',
+    quotes: 'off'
+  }
 };

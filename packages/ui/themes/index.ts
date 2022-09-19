@@ -14,6 +14,11 @@ const theme1: Acima.Theme = {
         size: 'sm'
       }
     },
+    Modal: {
+      defaultProps: {
+        radius: 'xs'
+      }
+    },
     Paper: {
       defaultProps: {
         radius: 'xs'
@@ -40,6 +45,11 @@ const theme2: Acima.Theme = {
       defaultProps: {
         color: 'grape.6',
         size: 'sm'
+      }
+    },
+    Modal: {
+      defaultProps: {
+        radius: 'md'
       }
     },
     Paper: {

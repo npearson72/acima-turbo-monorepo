@@ -2,6 +2,7 @@ import type {
   MantineThemeOverride,
   ButtonProps,
   CheckboxProps,
+  ModalProps,
   PaperProps
 } from '@mantine/core';
 
@@ -16,6 +17,9 @@ declare namespace Acima {
       };
       Checkbox: {
         defaultProps: Pick<CheckboxProps, 'color' | 'size' | 'radius'>;
+      };
+      Modal: {
+        defaultProps: Pick<ModalProps, 'radius'>;
       };
       Paper: {
         defaultProps: Pick<PaperProps, 'radius'>;
