@@ -14,7 +14,7 @@ export default defineConfig({
     visualizer({
       gzipSize: true,
       brotliSize: true,
-      filename: 'stats/web.html'
+      filename: 'stats/index.html'
     })
   ],
   build: {
