@@ -3,8 +3,8 @@ import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { Paper, Group } from '@mantine/core';
 import { css } from '@emotion/react';
 import { Icon } from '@iconify/react';
+import { todosRepo } from '@acima/ui/features/todos/repos';
 import { Checkbox } from './Checkbox';
-import { todosRepo } from '../../repos';
 
 const style = css`
   border: 1px solid #dfdfdf;

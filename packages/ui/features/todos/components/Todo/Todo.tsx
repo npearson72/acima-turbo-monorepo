@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { isPlatform } from '@ionic/react';
 import { useQueryClient, useMutation } from '@tanstack/react-query';
+import { todosRepo } from '@acima/ui/features/todos/repos';
 import TodoMobile from './Todo.mobile';
 import TodoWeb from './Todo.web';
-import { todosRepo } from '../../repos';
 
 interface Props {
   id: number;

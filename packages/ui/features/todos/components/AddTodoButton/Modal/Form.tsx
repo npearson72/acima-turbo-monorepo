@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { Input, Button } from '@mantine/core';
 import { css } from '@emotion/react';
-import { todosRepo } from '../../../repos';
+import { todosRepo } from '@acima/ui/features/todos/repos';
 
 const style = css`
   .btn-bar {

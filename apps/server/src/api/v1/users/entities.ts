@@ -1,4 +1,4 @@
-import type { User } from './schemas';
+import type { User } from '@domains/users/types';
 
 type UserEntity = Pick<User, 'id' | 'firstName' | 'lastName' | 'email'>;
 

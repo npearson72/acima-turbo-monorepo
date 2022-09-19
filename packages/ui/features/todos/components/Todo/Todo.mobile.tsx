@@ -7,8 +7,8 @@ import {
   IonItemOptions,
   IonItemOption
 } from '@ionic/react';
+import { todosRepo } from '@acima/ui/features/todos/repos';
 import { Checkbox } from './Checkbox';
-import { todosRepo } from '../../repos';
 
 const style = css`
   border-top: 1px solid rgba(0, 0, 0, 0.1);

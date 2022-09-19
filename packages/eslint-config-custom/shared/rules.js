@@ -16,7 +16,7 @@ module.exports = {
     '@typescript-eslint/quotes': 'off',
     'arrow-body-style': 'off',
     'arrow-parens': ['error', 'as-needed'],
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
     'max-classes-per-file': 'off',
     'max-len': ['error', { code: 80 }],

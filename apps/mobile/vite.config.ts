@@ -17,9 +17,6 @@ export default defineConfig({
       filename: 'stats/index.html'
     })
   ],
-  css: {
-    devSourcemap: true
-  },
   build: {
     emptyOutDir: true,
     outDir: 'dist'
