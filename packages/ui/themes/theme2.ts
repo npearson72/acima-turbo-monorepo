@@ -2,6 +2,7 @@ import {
   MantineThemeOverride,
   ButtonProps,
   CheckboxProps,
+  InputProps,
   ModalProps,
   PaperProps
 } from '@mantine/core';
@@ -18,8 +19,14 @@ const Checkbox: CheckboxProps = {
   size: 'sm'
 };
 
+const Input: InputProps = {
+  radius: 'lg'
+};
+
 const Modal: Partial<ModalProps> = {
-  radius: 'md'
+  overlayOpacity: 0.8,
+  overlayColor: 'white',
+  radius: 'lg'
 };
 
 const Paper: PaperProps = {
@@ -27,6 +34,7 @@ const Paper: PaperProps = {
 };
 
 const theme2: MantineThemeOverride = {
+  primaryColor: 'grape',
   components: {
     Button: {
       defaultProps: Button
@@ -34,8 +42,17 @@ const theme2: MantineThemeOverride = {
     Checkbox: {
       defaultProps: Checkbox
     },
+    Input: {
+      defaultProps: Input
+    },
     Modal: {
-      defaultProps: Modal
+      defaultProps: Modal,
+      styles: theme => ({
+        modal: {
+          background: theme.colors.violet[0],
+          outline: `1px solid ${theme.colors.grape[2]}`
+        }
+      })
     },
     Paper: {
       defaultProps: Paper

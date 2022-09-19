@@ -2,6 +2,7 @@ import {
   MantineThemeOverride,
   ButtonProps,
   CheckboxProps,
+  InputProps,
   ModalProps,
   PaperProps
 } from '@mantine/core';
@@ -18,8 +19,13 @@ const Checkbox: CheckboxProps = {
   size: 'sm'
 };
 
+const Input: InputProps = {
+  radius: 'sm'
+};
+
 const Modal: Partial<ModalProps> = {
-  radius: 'xs'
+  overlayOpacity: 0.2,
+  radius: 'md'
 };
 
 const Paper: PaperProps = {
@@ -33,6 +39,9 @@ const theme1: MantineThemeOverride = {
     },
     Checkbox: {
       defaultProps: Checkbox
+    },
+    Input: {
+      defaultProps: Input
     },
     Modal: {
       defaultProps: Modal

@@ -10,7 +10,6 @@ const Modal: React.FC<Props> = ({ opened, setOpened }) => {
   return (
     <MantineModal
       opened={opened}
-      overlayOpacity={0.2}
       withCloseButton={false}
       onClose={() => setOpened(false)}
     >

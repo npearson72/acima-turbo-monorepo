@@ -50,8 +50,9 @@ const Form: React.FC<Props> = ({ setOpened }) => {
   return (
     <div css={style}>
       <Input
-        variant="unstyled"
+        variant="default"
         size="md"
+        mb="md"
         placeholder="Task name"
         value={value}
         onChange={changeTaskName}
@@ -66,7 +67,7 @@ const Form: React.FC<Props> = ({ setOpened }) => {
         >
           Cancel
         </Button>
-        <Button size="sm" className="btn-add-todo" onClick={addTodo}>
+        <Button size="sm" onClick={addTodo}>
           Add todo
         </Button>
       </div>
