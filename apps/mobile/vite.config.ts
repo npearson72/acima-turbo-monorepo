@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,6 +10,11 @@ export default defineConfig({
       babel: {
         plugins: ['@emotion/babel-plugin'] // Allows emotion css source maps
       }
+    }),
+    visualizer({
+      gzipSize: true,
+      brotliSize: true,
+      filename: 'stats/index.html'
     })
   ],
   css: {

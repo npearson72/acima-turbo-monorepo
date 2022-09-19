@@ -8,9 +8,9 @@ module.exports = merge(common, {
   mode: 'production',
   plugins: [
     new BundleAnalyzerPlugin({
-      openAnalyzer: true,
+      openAnalyzer: false,
       analyzerMode: 'static',
-      reportFilename: path.resolve(__dirname, 'stats/extension.html')
+      reportFilename: path.resolve(__dirname, 'stats/index.html')
     }),
     new CopyPlugin({
       patterns: [

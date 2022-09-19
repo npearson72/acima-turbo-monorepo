@@ -12,10 +12,9 @@ export default defineConfig({
       }
     }),
     visualizer({
-      open: true,
       gzipSize: true,
       brotliSize: true,
-      filename: 'stats/web.html'
+      filename: 'stats/index.html'
     })
   ],
   build: {
