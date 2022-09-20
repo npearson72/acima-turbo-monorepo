@@ -18,7 +18,7 @@ interface Props {
 
 const Checkbox: React.FC<Props> = ({ id, title, complete }) => {
   const [isChecked, setIsChecked] = useState(complete);
-  const { mutation } = useTodosMutation('update') as any;
+  const { mutation } = useTodosMutation('update');
 
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked } = event.currentTarget;

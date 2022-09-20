@@ -45,8 +45,7 @@ interface Props {
 
 const TodoMobile: React.FC<Props> = props => {
   const { id } = props;
-
-  const { mutation } = useTodosMutation('delete') as any;
+  const { mutation } = useTodosMutation('delete');
 
   const deleteTodo = () => {
     mutation.mutate({ id: Number(id) });

@@ -3,8 +3,8 @@ import { todosApi } from '@acima/ui-apis';
 
 const useTodosMutation = (
   action: string,
-  invalidateQueries: boolean = true
-) => {
+  options?: Record<string, any>
+): any => {
   const queryClient = useQueryClient();
 
   let repo: any;
@@ -13,13 +13,13 @@ const useTodosMutation = (
   if (action === 'update') repo = todosApi.update;
   if (action === 'delete') repo = todosApi.delete;
 
-  const mutation = useMutation(repo, {
+  const defaultOptions = {
     onSuccess: () => {
-      if (invalidateQueries) {
-        queryClient.invalidateQueries(['todos']);
-      }
+      queryClient.invalidateQueries(['todos']);
     }
-  });
+  };
+
+  const mutation = useMutation(repo, options || defaultOptions);
 
   return { mutation };
 };

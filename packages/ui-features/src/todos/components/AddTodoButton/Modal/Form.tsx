@@ -19,7 +19,7 @@ interface Props {
 
 const Form: React.FC<Props> = ({ setOpened }) => {
   const [value, setValue] = useState('');
-  const { mutation } = useTodosMutation('create') as any;
+  const { mutation } = useTodosMutation('create');
 
   const changeTaskName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);

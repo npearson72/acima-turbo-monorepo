@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const httpClient = axios.create({
+export const httpClient = axios.create({
   baseURL: 'http://localhost:4000/api/v1'
 });
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
-const mockHttpClient = {
+export const mockHttpClient = {
   get: async (path: string) => {
     return { data: {} };
   },
@@ -23,5 +23,3 @@ const mockHttpClient = {
   }
 };
 /* eslint-enable @typescript-eslint/no-unused-vars */
-
-export { httpClient, mockHttpClient };
