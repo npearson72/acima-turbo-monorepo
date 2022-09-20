@@ -1,4 +1,4 @@
-import { httpClient, mockHttpClient } from '../utils';
+import { httpClient, mockHttpClient } from './httpClient';
 
 const client = process.env.NODE_ENV === 'stories' ? mockHttpClient : httpClient;
 

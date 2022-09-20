@@ -1,4 +1,3 @@
-import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { css } from '@emotion/react';
 import { Icon } from '@iconify/react';
 import {
@@ -7,7 +6,7 @@ import {
   IonItemOptions,
   IonItemOption
 } from '@ionic/react';
-import { todosRepo } from '@acima/ui/features/todos/repos';
+import { useTodosMutation } from '@acima/ui/hooks/requests';
 import { Checkbox } from './Checkbox';
 
 const style = css`
@@ -47,13 +46,7 @@ interface Props {
 const TodoMobile: React.FC<Props> = props => {
   const { id } = props;
 
-  const queryClient = useQueryClient();
-
-  const mutation = useMutation(todosRepo.delete, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(['todos']);
-    }
-  });
+  const { mutation } = useTodosMutation('delete') as any;
 
   const deleteTodo = () => {
     mutation.mutate({ id: Number(id) });

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Checkbox as MantineCheckbox } from '@mantine/core';
-import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { css } from '@emotion/react';
-import { todosRepo } from '@acima/ui/features/todos/repos';
+import { useTodosMutation } from '@acima/ui/hooks/requests';
 import { CheckboxLabel } from './CheckboxLabel';
 
 const style = css`
@@ -19,14 +18,7 @@ interface Props {
 
 const Checkbox: React.FC<Props> = ({ id, title, complete }) => {
   const [isChecked, setIsChecked] = useState(complete);
-
-  const queryClient = useQueryClient();
-
-  const mutation = useMutation(todosRepo.update, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(['todos']);
-    }
-  });
+  const { mutation } = useTodosMutation('update') as any;
 
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked } = event.currentTarget;

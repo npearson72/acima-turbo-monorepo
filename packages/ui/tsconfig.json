@@ -4,7 +4,8 @@
     "jsxImportSource": "@emotion/react",
     "rootDir": ".",
     "paths": {
-      "@acima/ui/features/todos/*": ["./features/todos/*"]
+      "@acima/ui/hooks/*": ["./hooks/*"],
+      "@acima/ui/repos/*": ["./repos/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"]

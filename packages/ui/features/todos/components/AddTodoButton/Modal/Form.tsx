@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { Input, Button } from '@mantine/core';
 import { css } from '@emotion/react';
-import { todosRepo } from '@acima/ui/features/todos/repos';
+import { useTodosMutation } from '@acima/ui/hooks/requests';
 
 const style = css`
   .btn-bar {
@@ -20,13 +19,7 @@ interface Props {
 
 const Form: React.FC<Props> = ({ setOpened }) => {
   const [value, setValue] = useState('');
-  const queryClient = useQueryClient();
-
-  const mutation = useMutation(todosRepo.post, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(['todos']);
-    }
-  });
+  const { mutation } = useTodosMutation('post') as any;
 
   const changeTaskName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
