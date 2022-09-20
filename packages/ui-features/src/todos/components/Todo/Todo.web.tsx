@@ -37,7 +37,6 @@ interface Props {
 const TodoWeb: React.FC<Props> = props => {
   const { id } = props;
   const [showTrash, setShowTrash] = useState(false);
-
   const { mutation } = useTodosMutation('delete') as any;
 
   const toggleTrash = () => {
