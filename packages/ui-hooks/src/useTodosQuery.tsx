@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { todosRepo } from '@acima/ui-repos';
+import { todosApi } from '@acima/ui-apis';
 
 const useTodosQuery = () => {
-  const { isLoading, data } = useQuery(['todos'], todosRepo.getAll);
+  const { isLoading, data } = useQuery(['todos'], todosApi.getAll);
 
   return { isLoading, data };
 };

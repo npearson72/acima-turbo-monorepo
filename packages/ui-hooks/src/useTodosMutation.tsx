@@ -1,5 +1,5 @@
 import { useQueryClient, useMutation } from '@tanstack/react-query';
-import { todosRepo } from '@acima/ui-repos';
+import { todosApi } from '@acima/ui-apis';
 
 const useTodosMutation = (
   action: string,
@@ -9,9 +9,9 @@ const useTodosMutation = (
 
   let repo: any;
 
-  if (action === 'create') repo = todosRepo.create;
-  if (action === 'update') repo = todosRepo.update;
-  if (action === 'delete') repo = todosRepo.delete;
+  if (action === 'create') repo = todosApi.create;
+  if (action === 'update') repo = todosApi.update;
+  if (action === 'delete') repo = todosApi.delete;
 
   const mutation = useMutation(repo, {
     onSuccess: () => {
