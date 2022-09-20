@@ -19,7 +19,22 @@ export default defineConfig({
   ],
   build: {
     emptyOutDir: true,
-    outDir: 'dist'
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: id => {
+          if (id.includes('ionic')) {
+            return 'ionic';
+          }
+
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+
+          return undefined;
+        }
+      }
+    }
   },
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' }
@@ -28,8 +43,10 @@ export default defineConfig({
     port: 4020
   },
   define: {
-    'process.env': {
-      PLATFORM: 'mobile'
+    process: {
+      env: {
+        PLATFORM: 'mobile'
+      }
     }
   }
 });

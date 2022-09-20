@@ -66,8 +66,10 @@ module.exports = {
   },
   plugins: [
     new DefinePlugin({
-      'process.env': {
-        PLATFORM: JSON.stringify('web')
+      process: {
+        env: {
+          PLATFORM: JSON.stringify('web')
+        }
       }
     }),
     new ProvidePlugin({ React: 'react' }),

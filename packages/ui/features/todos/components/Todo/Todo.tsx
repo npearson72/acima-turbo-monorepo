@@ -1,22 +1,7 @@
-import { useState, lazy, Suspense } from 'react';
+import { useState, Suspense } from 'react';
 import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { todosRepo } from '@acima/ui/features/todos/repos';
-
-let TodoMobile: any;
-let TodoWeb: any;
-
-if (process.env.PLATFORM === 'mobile') {
-  TodoMobile = lazy(() => import('./Todo.mobile'));
-}
-
-if (process.env.PLATFORM === 'web') {
-  TodoWeb = lazy(() => import('./Todo.web'));
-}
-
-if (process.env.PLATFORM === 'story') {
-  TodoMobile = lazy(() => import('./Todo.mobile'));
-  TodoWeb = lazy(() => import('./Todo.web'));
-}
+import { TodoMobile, TodoWeb } from './loadModules';
 
 interface Props {
   id: number;

@@ -28,8 +28,10 @@ export default defineConfig({
     port: 4010
   },
   define: {
-    'process.env': {
-      PLATFORM: 'web'
+    process: {
+      env: {
+        PLATFORM: 'web'
+      }
     }
   }
 });
