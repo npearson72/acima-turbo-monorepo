@@ -1,2 +1,2 @@
 export * from './useTodosQuery';
-export * from './useTodosMutation';
+export * from './useTodoMutation';

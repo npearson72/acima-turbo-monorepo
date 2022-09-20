@@ -6,7 +6,7 @@ import {
   IonItemOptions,
   IonItemOption
 } from '@ionic/react';
-import { useTodosMutation } from '@acima/ui-hooks';
+import { useTodoMutation } from '@acima/ui-hooks';
 import { Checkbox } from './Checkbox';
 
 const style = css`
@@ -45,7 +45,7 @@ interface Props {
 
 const TodoMobile: React.FC<Props> = props => {
   const { id } = props;
-  const { mutation } = useTodosMutation('delete');
+  const { mutation } = useTodoMutation('delete');
 
   const deleteTodo = () => {
     mutation.mutate({ id: Number(id) });

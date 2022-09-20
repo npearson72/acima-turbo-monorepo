@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Checkbox as MantineCheckbox } from '@mantine/core';
 import { css } from '@emotion/react';
-import { useTodosMutation } from '@acima/ui-hooks';
+import { useTodoMutation } from '@acima/ui-hooks';
 import { CheckboxLabel } from './CheckboxLabel';
 
 const style = css`
@@ -18,7 +18,7 @@ interface Props {
 
 const Checkbox: React.FC<Props> = ({ id, title, complete }) => {
   const [isChecked, setIsChecked] = useState(complete);
-  const { mutation } = useTodosMutation('update');
+  const { mutation } = useTodoMutation('update');
 
   const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked } = event.currentTarget;

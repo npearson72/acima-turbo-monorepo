@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Paper, Group } from '@mantine/core';
 import { css } from '@emotion/react';
 import { Icon } from '@iconify/react';
-import { useTodosMutation } from '@acima/ui-hooks';
+import { useTodoMutation } from '@acima/ui-hooks';
 import { Checkbox } from './Checkbox';
 
 const style = css`
@@ -37,7 +37,7 @@ interface Props {
 const TodoWeb: React.FC<Props> = props => {
   const { id } = props;
   const [showTrash, setShowTrash] = useState(false);
-  const { mutation } = useTodosMutation('delete');
+  const { mutation } = useTodoMutation('delete');
 
   const toggleTrash = () => {
     setShowTrash(!showTrash);

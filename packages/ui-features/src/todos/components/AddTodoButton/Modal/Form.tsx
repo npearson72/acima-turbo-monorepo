@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Input, Button } from '@mantine/core';
 import { css } from '@emotion/react';
-import { useTodosMutation } from '@acima/ui-hooks';
+import { useTodoMutation } from '@acima/ui-hooks';
 
 const style = css`
   .btn-bar {
@@ -19,7 +19,7 @@ interface Props {
 
 const Form: React.FC<Props> = ({ setOpened }) => {
   const [value, setValue] = useState('');
-  const { mutation } = useTodosMutation('create');
+  const { mutation } = useTodoMutation('create');
 
   const changeTaskName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
