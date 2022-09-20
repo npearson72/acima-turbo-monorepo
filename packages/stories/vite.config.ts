@@ -13,5 +13,10 @@ export default defineConfig({
   ],
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' }
+  },
+  define: {
+    'process.env': {
+      PLATFORM: 'story'
+    }
   }
 });

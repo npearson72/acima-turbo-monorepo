@@ -26,5 +26,10 @@ export default defineConfig({
   },
   server: {
     port: 4010
+  },
+  define: {
+    'process.env': {
+      PLATFORM: 'web'
+    }
   }
 });

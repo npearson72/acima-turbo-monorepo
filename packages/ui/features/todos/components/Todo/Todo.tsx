@@ -1,9 +1,22 @@
-import { useState } from 'react';
-import { isPlatform } from '@ionic/react';
+import { useState, lazy, Suspense } from 'react';
 import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { todosRepo } from '@acima/ui/features/todos/repos';
-import TodoMobile from './Todo.mobile';
-import TodoWeb from './Todo.web';
+
+let TodoMobile: any;
+let TodoWeb: any;
+
+if (process.env.PLATFORM === 'mobile') {
+  TodoMobile = lazy(() => import('./Todo.mobile'));
+}
+
+if (process.env.PLATFORM === 'web') {
+  TodoWeb = lazy(() => import('./Todo.web'));
+}
+
+if (process.env.PLATFORM === 'story') {
+  TodoMobile = lazy(() => import('./Todo.mobile'));
+  TodoWeb = lazy(() => import('./Todo.web'));
+}
 
 interface Props {
   id: number;
@@ -31,13 +44,23 @@ const Todo: React.FC<Props> = props => {
     mutation.mutate({ id, complete: checked });
   };
 
-  if (story?.mobile || isPlatform('mobile')) {
+  if (!TodoWeb || story?.mobile) {
     return (
-      <TodoMobile {...props} isChecked={isChecked} handleCheck={handleCheck} />
+      <Suspense>
+        <TodoMobile
+          {...props}
+          isChecked={isChecked}
+          handleCheck={handleCheck}
+        />
+      </Suspense>
     );
   }
 
-  return <TodoWeb {...props} isChecked={isChecked} handleCheck={handleCheck} />;
+  return (
+    <Suspense>
+      <TodoWeb {...props} isChecked={isChecked} handleCheck={handleCheck} />
+    </Suspense>
+  );
 };
 
 export { Todo };

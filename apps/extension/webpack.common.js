@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
-const { ProvidePlugin } = require('webpack');
+const { ProvidePlugin, DefinePlugin } = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 function getHtmlPlugins(chunks) {
@@ -65,6 +65,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new DefinePlugin({
+      'process.env': {
+        PLATFORM: JSON.stringify('web')
+      }
+    }),
     new ProvidePlugin({ React: 'react' }),
     new CleanWebpackPlugin({
       cleanStaleWebpackAssets: false

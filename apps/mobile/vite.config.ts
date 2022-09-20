@@ -26,5 +26,10 @@ export default defineConfig({
   },
   server: {
     port: 4020
+  },
+  define: {
+    'process.env': {
+      PLATFORM: 'mobile'
+    }
   }
 });
