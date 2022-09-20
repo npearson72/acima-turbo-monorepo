@@ -1,5 +1,5 @@
 import { useQueryClient, useMutation } from '@tanstack/react-query';
-import { todosRepo } from '@acima/ui/repos';
+import { todosRepo } from '@acima/ui-repos';
 
 const useTodosMutation = (type: string, invalidateQueries: boolean = true) => {
   const queryClient = useQueryClient();

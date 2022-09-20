@@ -1,4 +1,4 @@
-import { Todos } from '@acima/ui/features';
+import { Todos } from '@acima/ui-features';
 import PageWrapper from './PageWrapper';
 
 const TodosPage: React.FC = () => {

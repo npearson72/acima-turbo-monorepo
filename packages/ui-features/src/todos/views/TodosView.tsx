@@ -1,4 +1,4 @@
-import { useTodosQuery } from '@acima/ui/hooks/requests';
+import { useTodosQuery } from '@acima/ui-hooks';
 import { TodoList, AddTodoButton } from '../components';
 
 const TodosView: React.FC = () => {

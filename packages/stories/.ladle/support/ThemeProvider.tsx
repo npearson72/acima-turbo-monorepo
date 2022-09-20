@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { MantineProvider } from '@mantine/core';
-import { themes, themeSelector } from '@acima/ui/themes';
+import { themes, themeSelector } from '@acima/ui-themes';
 import { SelectTheme } from './SelectTheme';
 
 const themeIds = themes.map(theme => theme.other?.id);

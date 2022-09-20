@@ -6,7 +6,8 @@
     "stories": "NODE_ENV=stories ladle dev"
   },
   "dependencies": {
-    "@acima/ui": "*",
+    "@acima/ui-features": "*",
+    "@acima/ui-themes": "*",
     "@emotion/react": "^11.10.4",
     "@ionic/react": "^6.2.0",
     "@mantine/core": "^5.3.0",

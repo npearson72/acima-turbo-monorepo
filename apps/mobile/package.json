@@ -17,7 +17,8 @@
     "ionic:serve": "yarn dev"
   },
   "dependencies": {
-    "@acima/ui": "*",
+    "@acima/ui-features": "*",
+    "@acima/ui-themes": "*",
     "@capacitor/android": "^4.0.1",
     "@capacitor/app": "^4.0.1",
     "@capacitor/core": "^4.0.1",

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Input, Button } from '@mantine/core';
 import { css } from '@emotion/react';
-import { useTodosMutation } from '@acima/ui/hooks/requests';
+import { useTodosMutation } from '@acima/ui-hooks';
 
 const style = css`
   .btn-bar {

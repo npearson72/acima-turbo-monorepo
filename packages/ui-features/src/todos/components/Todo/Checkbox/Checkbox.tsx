@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Checkbox as MantineCheckbox } from '@mantine/core';
 import { css } from '@emotion/react';
-import { useTodosMutation } from '@acima/ui/hooks/requests';
+import { useTodosMutation } from '@acima/ui-hooks';
 import { CheckboxLabel } from './CheckboxLabel';
 
 const style = css`

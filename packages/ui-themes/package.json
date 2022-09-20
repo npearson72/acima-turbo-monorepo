@@ -1,0 +1,19 @@
+{
+  "name": "@acima/ui-themes",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "lint": "eslint src --quiet"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@mantine/core": "^5.3.0",
+    "@mantine/hooks": "^5.3.0"
+  },
+  "devDependencies": {
+    "@acima/eslint-config-custom": "*",
+    "@acima/tsconfig": "*",
+    "typescript": "^4.8.2"
+  }
+}
