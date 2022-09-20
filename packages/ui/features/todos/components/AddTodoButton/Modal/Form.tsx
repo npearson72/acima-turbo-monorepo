@@ -24,7 +24,6 @@ const Form: React.FC<Props> = ({ setOpened }) => {
 
   const mutation = useMutation(todosRepo.post, {
     onSuccess: () => {
-      // Invalidate and refetch
       queryClient.invalidateQueries(['todos']);
     }
   });

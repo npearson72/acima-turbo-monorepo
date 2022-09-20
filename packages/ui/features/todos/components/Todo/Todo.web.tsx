@@ -32,8 +32,7 @@ const style = css`
 interface Props {
   id: number;
   title: string;
-  isChecked: boolean;
-  handleCheck: React.ChangeEventHandler<HTMLInputElement>;
+  complete: boolean;
 }
 
 const TodoWeb: React.FC<Props> = props => {
@@ -43,7 +42,6 @@ const TodoWeb: React.FC<Props> = props => {
 
   const mutation = useMutation(todosRepo.delete, {
     onSuccess: () => {
-      // Invalidate and refetch
       queryClient.invalidateQueries(['todos']);
     }
   });
