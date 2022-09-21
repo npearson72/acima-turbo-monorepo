@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "stories": "NODE_ENV=stories ladle dev"
+    "stories": "ladle dev"
   },
   "dependencies": {
     "@acima/ui-features": "*",

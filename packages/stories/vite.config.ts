@@ -17,7 +17,7 @@ export default defineConfig({
   define: {
     process: {
       env: {
-        PLATFORM: 'story'
+        PLATFORM: 'stories'
       }
     }
   }

@@ -1,6 +1,6 @@
 import { httpClient, mockHttpClient } from './httpClient';
 
-const client = process.env.NODE_ENV === 'stories' ? mockHttpClient : httpClient;
+const client = process.env.PLATFORM === 'stories' ? mockHttpClient : httpClient;
 
 const todosApi = {
   async getAll() {

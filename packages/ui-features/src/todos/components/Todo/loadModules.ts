@@ -11,7 +11,7 @@ if (process.env.PLATFORM === 'web') {
   todoWeb = lazy(() => import('./Todo.web'));
 }
 
-if (process.env.PLATFORM === 'story') {
+if (process.env.PLATFORM === 'stories') {
   todoMobile = lazy(() => import('./Todo.mobile'));
   todoWeb = lazy(() => import('./Todo.web'));
 }
