@@ -1,7 +1,0 @@
-{
-  "ignore": ["*.test.ts"],
-  "watch": ["src/"],
-  "execMap": {
-    "ts": "node -r ts-node/register/transpile-only -r tsconfig-paths/register"
-  }
-}

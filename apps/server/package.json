@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc --noEmit && node build.js",
     "clear:dist": "rm -rf dist",
-    "dev": "nodemon --inspect src/index.ts",
+    "dev": "tsx watch --inspect --clear-screen=false src/index.ts",
     "lint": "eslint src --quiet",
     "preview": "node --enable-source-maps dist/index.js"
   },
@@ -15,9 +15,6 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
-    "nodemon": "^2.0.19",
-    "ts-node": "^10.9.1",
-    "tsconfig-paths": "^4.1.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
@@ -28,6 +25,7 @@
     "@types/node": "^18.7.15",
     "esbuild": "^0.15.7",
     "prisma": "^4.3.1",
+    "tsx": "^3.9.0",
     "typescript": "^4.8.2"
   }
 }
