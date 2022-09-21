@@ -26,3 +26,9 @@ TodoListStory.args = {
   mobile: false,
   isLoading: false
 };
+
+export const TodoListEmpty = () => {
+  return <TodoList isLoading={false} data={{ todos: [] }} />;
+};
+
+TodoListEmpty.storyName = 'TodoList Empty';
