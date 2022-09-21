@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "dev": "tauri dev",
+    "dev:web": "vite",
+    "build": "echo TBD...",
     "lint": "eslint src --quiet",
-    "preview": "vite preview",
+    "preview": "echo TBD...",
     "tauri": "tauri"
   },
   "dependencies": {

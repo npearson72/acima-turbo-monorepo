@@ -1,12 +1,12 @@
 {
   "build": {
-    "beforeDevCommand": "yarn dev",
+    "beforeDevCommand": "yarn dev:web",
     "beforeBuildCommand": "yarn build",
     "devPath": "http://localhost:4030",
     "distDir": "../dist"
   },
   "package": {
-    "productName": "tauri-app",
+    "productName": "acima",
     "version": "0.0.0"
   },
   "tauri": {
@@ -57,7 +57,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "tauri-app",
+        "title": "Acima",
         "width": 800
       }
     ]
