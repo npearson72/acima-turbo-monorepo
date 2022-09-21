@@ -10,6 +10,9 @@
     "dev": {
       "cache": false
     },
+    "dev:android": {
+      "cache": false
+    },
     "dev:ios": {
       "cache": false
     },
@@ -23,5 +26,10 @@
       "cache": false
     }
   },
-  "globalDependencies": ["$SERVER_PORT", "$NODE_ENV", "$PLATFORM"]
+  "globalDependencies": [
+    "$SERVER_URL",
+    "$SERVER_PORT",
+    "$VITE_SERVER_URL",
+    "$PLATFORM"
+  ]
 }

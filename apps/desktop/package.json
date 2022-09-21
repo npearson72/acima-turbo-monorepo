@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "build": "echo TBD...",
     "dev": "tauri dev",
     "dev:web": "vite",
-    "build": "echo TBD...",
     "lint": "eslint src --quiet",
     "preview": "echo TBD...",
     "tauri": "tauri"

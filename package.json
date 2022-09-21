@@ -10,6 +10,7 @@
     "build": "turbo run build",
     "clear:dist": "turbo run clear:dist",
     "dev": "turbo run dev --parallel",
+    "dev:android": "turbo run dev:android",
     "dev:ios": "turbo run dev:ios",
     "lint": "turbo run lint",
     "lint-all": "eslint '**/*.{js,jsx,ts,tsx}' --quiet",

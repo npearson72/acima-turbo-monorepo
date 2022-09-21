@@ -8,13 +8,14 @@
     ]
   },
   "scripts": {
-    "dev": "vite",
-    "dev:ios": "ionic cap run ios -l --external --target 000BA31B-6962-4086-A3AC-6CD841B7B3E5",
-    "clear:dist": "rm -rf dist",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview",
+    "clear:dist": "rm -rf dist",
+    "dev": "vite",
+    "dev:android": "ionic cap run android -l --external --target Pixel_5_API_33",
+    "dev:ios": "ionic cap run ios -l --external --target 000BA31B-6962-4086-A3AC-6CD841B7B3E5",
     "ionic:build": "yarn build",
-    "ionic:serve": "yarn dev"
+    "ionic:serve": "yarn dev",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@acima/ui-features": "*",

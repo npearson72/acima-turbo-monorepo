@@ -1,14 +1,14 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 require('esbuild')
   .build({
-    platform: 'node',
-    logLevel: 'error',
-    entryPoints: ['src/index.ts'],
     bundle: true,
-    minify: true,
+    entryPoints: ['src/index.ts'],
     keepNames: true,
+    logLevel: 'error',
+    minify: true,
+    outfile: 'dist/index.js',
+    platform: 'node',
     sourcemap: 'linked',
-    sourcesContent: false,
-    outfile: 'dist/index.js'
+    sourcesContent: false
   })
   .catch(() => process.exit(1));

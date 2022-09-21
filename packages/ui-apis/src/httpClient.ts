@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const httpClient = axios.create({
-  baseURL: 'http://localhost:4000/api/v1'
+  baseURL: `${process.env.SERVER_URL}/api/v1/`
 });
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
