@@ -50,7 +50,7 @@ const theme2: MantineThemeOverride = {
       styles: theme => ({
         modal: {
           background: theme.colors.violet[0],
-          outline: `1px solid ${theme.colors.grape[2]}`
+          border: `1px solid ${theme.colors.grape[2]}`
         }
       })
     },
