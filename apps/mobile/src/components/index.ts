@@ -1,3 +1,2 @@
-import TheHeader from './TheHeader';
-
-export { TheHeader };
+export { Header } from './Header';
+export { Modal } from './Modal';

@@ -7,19 +7,24 @@ import {
   PaperProps
 } from '@mantine/core';
 
-const Button: ButtonProps = {
+const Button: Partial<ButtonProps> = {
   color: 'blue.6',
   radius: 'sm',
   size: 'sm'
 };
 
-const Checkbox: CheckboxProps = {
+const Checkbox: Partial<CheckboxProps> = {
   color: 'blue.6',
   radius: 'xl',
-  size: 'sm'
+  size: 'sm',
+  sx: {
+    input: {
+      cursor: 'pointer'
+    }
+  }
 };
 
-const Input: InputProps = {
+const Input: Partial<InputProps> = {
   radius: 'sm'
 };
 
@@ -28,7 +33,7 @@ const Modal: Partial<ModalProps> = {
   radius: 'md'
 };
 
-const Paper: PaperProps = {
+const Paper: Partial<PaperProps> = {
   radius: 'xs'
 };
 

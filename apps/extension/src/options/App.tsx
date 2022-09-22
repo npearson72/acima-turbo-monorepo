@@ -1,17 +1,11 @@
-import { css } from '@emotion/react';
-
-const style = css`
-  height: 400px;
-  text-align: center;
-  width: 400px;
-`;
+import { AppShell, Text } from '@mantine/core';
 
 const App: React.FC = () => {
   return (
-    <div css={style}>
-      <h1>Options</h1>
-      <p>Options go here!</p>
-    </div>
+    <AppShell sx={{ width: 400, height: 400 }}>
+      <Text component="h1">Options</Text>
+      <Text component="p">Options go here!</Text>
+    </AppShell>
   );
 };
 

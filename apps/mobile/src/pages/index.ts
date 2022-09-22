@@ -1,3 +1,4 @@
-export * from './TodosPage';
-export * from './ProgressPage';
-export * from './AccountPage';
+export { PageWrapper } from './PageWrapper';
+export { TodosPage } from './TodosPage';
+export { ProgressPage } from './ProgressPage';
+export { AccountPage } from './AccountPage';

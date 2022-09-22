@@ -19,9 +19,7 @@ const useTodoMutation = (
     }
   };
 
-  const mutation = useMutation(repo, options || defaultOptions);
-
-  return { mutation };
+  return useMutation(repo, options || defaultOptions);
 };
 
 export { useTodoMutation };

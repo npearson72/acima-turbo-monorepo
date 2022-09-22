@@ -1,25 +1,17 @@
+import { RefObject } from 'react';
 import { IonContent, IonPage } from '@ionic/react';
-import { css } from '@emotion/react';
-import { TheHeader } from '../components';
-
-const style = css`
-  ion-content {
-    text-align: center;
-  }
-`;
+import { Header } from '../components';
 
 interface Props {
-  className?: string;
+  pageRef?: RefObject<HTMLDivElement>;
   children: React.ReactNode;
 }
 
-const PageWrapper: React.FC<Props> = ({ className, children }) => {
+export const PageWrapper: React.FC<Props> = ({ pageRef, children }) => {
   return (
-    <IonPage css={style} className={className}>
-      <TheHeader />
-      <IonContent>{children}</IonContent>
+    <IonPage style={{ textAlign: 'center' }} ref={pageRef}>
+      <Header />
+      <IonContent className="ion-padding">{children}</IonContent>
     </IonPage>
   );
 };
-
-export default PageWrapper;

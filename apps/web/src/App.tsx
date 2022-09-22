@@ -1,15 +1,11 @@
-import { Todos } from '@acima/ui-features';
-import { css } from '@emotion/react';
-
-const style = css`
-  padding: 2rem;
-`;
+import { AppShell } from '@mantine/core';
+import { TodosPage } from './pages';
 
 const App: React.FC = () => {
   return (
-    <div css={style}>
-      <Todos />
-    </div>
+    <AppShell>
+      <TodosPage />
+    </AppShell>
   );
 };
 
