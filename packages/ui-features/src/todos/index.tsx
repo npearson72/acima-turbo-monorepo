@@ -17,4 +17,4 @@ const Todos: React.FC = () => {
   );
 };
 
-export { Todos };
+export { Todos, QueryClientProvider, queryClient };

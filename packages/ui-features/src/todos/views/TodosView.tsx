@@ -1,12 +1,13 @@
-import { useTodosQuery } from '@acima/ui-hooks';
+import { useTodosQuery, usePlatform } from '@acima/ui-hooks';
 import { TodoList, AddTodoButton } from '../components';
 
 const TodosView: React.FC = () => {
   const { isLoading, data } = useTodosQuery();
+  const platform = usePlatform();
 
   return (
     <>
-      <AddTodoButton />
+      {platform === 'web' && <AddTodoButton />}
       <TodoList isLoading={isLoading} data={data} />
     </>
   );

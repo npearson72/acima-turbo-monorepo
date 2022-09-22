@@ -6,7 +6,7 @@ interface Props {
   setOpened: (value: boolean) => void;
 }
 
-const Modal: React.FC<Props> = ({ opened, setOpened }) => {
+const ModalWeb: React.FC<Props> = ({ opened, setOpened }) => {
   return (
     <MantineModal
       opened={opened}
@@ -18,4 +18,4 @@ const Modal: React.FC<Props> = ({ opened, setOpened }) => {
   );
 };
 
-export { Modal };
+export default ModalWeb;
