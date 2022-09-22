@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { TodoMobile, TodoWeb } from './loadModules';
+import { usePlatformTodo } from './usePlatformTodo';
 
 interface Props {
   id: number;
@@ -10,18 +10,11 @@ interface Props {
 
 const Todo: React.FC<Props> = props => {
   const { story } = props;
-
-  if (!TodoWeb || story?.mobile) {
-    return (
-      <Suspense>
-        <TodoMobile {...props} />
-      </Suspense>
-    );
-  }
+  const { PlatformTodo } = usePlatformTodo(story);
 
   return (
     <Suspense>
-      <TodoWeb {...props} />
+      <PlatformTodo {...props} />
     </Suspense>
   );
 };

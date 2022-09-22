@@ -20,6 +20,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'max-classes-per-file': 'off',
     'max-len': ['error', { code: 80 }],
+    'no-underscore-dangle': 'off',
     'object-curly-newline': 'off',
     quotes: 'off'
   }
