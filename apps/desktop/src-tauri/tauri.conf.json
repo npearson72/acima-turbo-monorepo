@@ -6,7 +6,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "acima",
+    "productName": "Acima",
     "version": "0.0.0"
   },
   "tauri": {
