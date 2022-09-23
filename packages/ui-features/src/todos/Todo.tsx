@@ -9,7 +9,6 @@ export interface TodoProps {
   currentTab: string;
   updateTodoMutation: Record<string, any>;
   deleteTodoMutation: Record<string, any>;
-  children?: React.ReactNode;
 }
 
 export const Todo: React.FC<TodoProps> = ({
@@ -18,8 +17,7 @@ export const Todo: React.FC<TodoProps> = ({
   complete,
   currentTab,
   updateTodoMutation,
-  deleteTodoMutation,
-  children
+  deleteTodoMutation
 }) => {
   const [checked, setChecked] = useState(complete);
   const [hovering, setHovering] = useState(false);
@@ -54,9 +52,7 @@ export const Todo: React.FC<TodoProps> = ({
           id={id}
           deleteTodoMutation={deleteTodoMutation}
           parentHovering={hovering}
-        >
-          {children}
-        </TodoDelete>
+        />
       </Group>
     </Paper>
   );

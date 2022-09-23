@@ -1,20 +1,16 @@
 import { Paper } from '@mantine/core';
 import { Icon } from '@iconify/react';
 
-const DeleteIcon = () => <Icon icon="icons8:trash" />;
-
 interface TodoDeleteProps {
   id: number;
   deleteTodoMutation: Record<string, any>;
   parentHovering: boolean;
-  children?: React.ReactNode;
 }
 
 export const TodoDelete: React.FC<TodoDeleteProps> = ({
   id,
   deleteTodoMutation,
-  parentHovering,
-  children
+  parentHovering
 }) => {
   const { mutate: mutateDelete } = deleteTodoMutation;
 
@@ -34,7 +30,7 @@ export const TodoDelete: React.FC<TodoDeleteProps> = ({
         }
       })}
     >
-      {children || <DeleteIcon />}
+      <Icon icon="icons8:trash" />
     </Paper>
   );
 };

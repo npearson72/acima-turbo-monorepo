@@ -6,14 +6,12 @@ interface TodoListProps {
   todos: Pick<TodoProps, 'id' | 'title' | 'complete'>[];
   updateTodoMutation: Record<string, any>;
   deleteTodoMutation: Record<string, any>;
-  DeleteIcon?: any;
 }
 
 export const TodoList: React.FC<TodoListProps> = ({
   todos,
   updateTodoMutation,
-  deleteTodoMutation,
-  DeleteIcon
+  deleteTodoMutation
 }) => {
   const [currentTab, setCurrentTab] = useState('available');
 
@@ -39,9 +37,7 @@ export const TodoList: React.FC<TodoListProps> = ({
           deleteTodoMutation={deleteTodoMutation}
           currentTab={currentTab}
           {...todo}
-        >
-          {DeleteIcon && <DeleteIcon />}
-        </Todo>
+        />
       ))}
     </Stack>
   );
