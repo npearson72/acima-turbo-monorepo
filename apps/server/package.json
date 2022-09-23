@@ -10,7 +10,6 @@
     "preview": "node --enable-source-maps dist/index.js"
   },
   "dependencies": {
-    "@acima/util": "*",
     "@prisma/client": "^4.3.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",

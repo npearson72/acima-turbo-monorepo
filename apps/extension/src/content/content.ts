@@ -1,4 +1,4 @@
-import { helloWorld } from '@acima/util';
+import { helloWorld } from '@acima/utils';
 
 const message = `Hi from content script. This is shared: ${helloWorld()}`;
 
