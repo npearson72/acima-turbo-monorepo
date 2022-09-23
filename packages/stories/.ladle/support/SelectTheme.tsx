@@ -11,7 +11,7 @@ interface Props {
   setThemeId: Dispatch<SetStateAction<string>>;
 }
 
-const SelectTheme: React.FC<Props> = ({ themes, setThemeId }) => {
+const SelectTheme = ({ themes, setThemeId }: Props) => {
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setThemeId(event.target.value);
   };

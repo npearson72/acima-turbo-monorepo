@@ -5,7 +5,7 @@ import { TodoList, TodoAddForm, TodoListRefresher } from '../components/todos';
 import { Modal } from '../components';
 import { PageWrapper } from './PageWrapper';
 
-const TodosPage: React.FC = () => {
+const TodosPage = () => {
   const { isLoading, data } = useTodosQuery();
   const createTodoMutation = useTodoMutation('create');
   const deleteTodoMutation = useTodoMutation('delete');

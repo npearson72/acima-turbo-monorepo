@@ -8,11 +8,11 @@ interface TodoListProps {
   deleteTodoMutation: Record<string, any>;
 }
 
-export const TodoList: React.FC<TodoListProps> = ({
+export const TodoList = ({
   todos,
   updateTodoMutation,
   deleteTodoMutation
-}) => {
+}: TodoListProps) => {
   const [currentTab, setCurrentTab] = useState('available');
 
   return (

@@ -7,9 +7,7 @@ interface TodoAddButtonProps {
   createTodoMutation: Record<string, any>;
 }
 
-export const TodoAddButton: React.FC<TodoAddButtonProps> = ({
-  createTodoMutation
-}) => {
+export const TodoAddButton = ({ createTodoMutation }: TodoAddButtonProps) => {
   const [opened, setOpened] = useState(false);
 
   return (

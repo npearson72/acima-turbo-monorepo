@@ -20,6 +20,8 @@ module.exports = {
     }
   },
   rules: {
+    // Typescript does not allow default values in interfaces
+    'react/require-default-props': 'off',
     'react/function-component-definition': [
       'error',
       { namedComponents: 'arrow-function' }

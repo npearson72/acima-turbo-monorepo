@@ -7,7 +7,7 @@ import {
   TodoListLoading
 } from '@acima/ui-features';
 
-export const TodosPage: React.FC = () => {
+export const TodosPage = () => {
   const { isLoading, data } = useTodosQuery();
 
   const createTodoMutation = useTodoMutation('create');

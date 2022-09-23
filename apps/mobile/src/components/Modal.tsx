@@ -15,12 +15,7 @@ interface Props {
   dismissModal: () => void;
   children: React.ReactNode;
 }
-export const Modal: React.FC<Props> = ({
-  pageRef,
-  modalRef,
-  dismissModal,
-  children
-}) => {
+export const Modal = ({ pageRef, modalRef, dismissModal, children }: Props) => {
   // eslint-disable-next-line
   const [presentingElement, setPresentingElement] =
     useState<HTMLElement | null>(null);

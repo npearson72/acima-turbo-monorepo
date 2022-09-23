@@ -1,6 +1,6 @@
 import { PageWrapper } from './PageWrapper';
 
-const AccountPage: React.FC = () => (
+const AccountPage = () => (
   <PageWrapper>
     <h1>Account</h1>
   </PageWrapper>

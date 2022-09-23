@@ -1,6 +1,6 @@
 import { AppShell, Text } from '@mantine/core';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <AppShell sx={{ width: 400, height: 400 }}>
       <Text component="h1">Options</Text>

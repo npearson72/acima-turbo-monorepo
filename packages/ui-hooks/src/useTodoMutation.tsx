@@ -1,10 +1,10 @@
 import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { todosApi } from '@acima/ui-apis';
 
-const useTodoMutation = (
+export const useTodoMutation = (
   action: string,
   options?: Record<string, any>
-): any => {
+) => {
   const queryClient = useQueryClient();
 
   let repo: any;
@@ -21,5 +21,3 @@ const useTodoMutation = (
 
   return useMutation(repo, options || defaultOptions);
 };
-
-export { useTodoMutation };

@@ -9,13 +9,13 @@ const todosApi = {
     return data;
   },
 
-  async create(params: Record<string, any>) {
+  async create(params: { title: string; complete?: boolean }) {
     const { data } = await client.post('todos', params);
 
     return data;
   },
 
-  async update(params: Record<string, any>) {
+  async update(params: { id: number; title?: string; complete?: boolean }) {
     const { data } = await client.patch(`todos/${params.id}`, params);
 
     return data;

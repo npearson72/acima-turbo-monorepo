@@ -11,14 +11,14 @@ export interface TodoProps {
   deleteTodoMutation: Record<string, any>;
 }
 
-export const Todo: React.FC<TodoProps> = ({
+export const Todo = ({
   id,
   title,
   complete,
   currentTab,
   updateTodoMutation,
   deleteTodoMutation
-}) => {
+}: TodoProps) => {
   const [checked, setChecked] = useState(complete);
   const [hovering, setHovering] = useState(false);
 

@@ -7,10 +7,10 @@ import { SelectTheme } from './SelectTheme';
 const themeIds = themes.map(theme => theme.other?.id);
 
 interface Props {
-  children: any;
+  children: React.ReactNode;
 }
 
-const ThemeProvider: React.FC<Props> = ({ children }) => {
+const ThemeProvider = ({ children }: Props) => {
   const [themeId, setThemeId] = useState(themeIds[0]);
 
   useEffect(() => {

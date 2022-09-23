@@ -7,10 +7,10 @@ interface TodoAddFormProps {
   dismissModal: () => void;
 }
 
-export const TodoAddForm: React.FC<TodoAddFormProps> = ({
+export const TodoAddForm = ({
   dismissModal,
   createTodoMutation
-}) => {
+}: TodoAddFormProps) => {
   const [value, setValue] = useState('');
   const [errorText, setErrorText] = useState(null);
   const { mutate: create, isError } = createTodoMutation;

@@ -19,10 +19,10 @@ interface TodoAddFormProps {
   setOpened: (value: boolean) => void;
 }
 
-export const TodoAddForm: React.FC<TodoAddFormProps> = ({
+export const TodoAddForm = ({
   createTodoMutation,
   setOpened
-}) => {
+}: TodoAddFormProps) => {
   const [value, setValue] = useState('');
   const [errorText, setErrorText] = useState(null);
   const { mutate: create, isError } = createTodoMutation;

@@ -7,11 +7,11 @@ interface TodoDeleteProps {
   parentHovering: boolean;
 }
 
-export const TodoDelete: React.FC<TodoDeleteProps> = ({
+export const TodoDelete = ({
   id,
   deleteTodoMutation,
   parentHovering
-}) => {
+}: TodoDeleteProps) => {
   const { mutate: mutateDelete } = deleteTodoMutation;
 
   return (

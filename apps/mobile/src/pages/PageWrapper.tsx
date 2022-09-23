@@ -7,7 +7,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export const PageWrapper: React.FC<Props> = ({ pageRef, children }) => {
+export const PageWrapper = ({ pageRef, children }: Props) => {
   return (
     <IonPage style={{ textAlign: 'center' }} ref={pageRef}>
       <Header />

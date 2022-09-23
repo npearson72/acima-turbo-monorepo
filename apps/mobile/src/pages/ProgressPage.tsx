@@ -1,6 +1,6 @@
 import { PageWrapper } from './PageWrapper';
 
-const ProgressPage: React.FC = () => (
+const ProgressPage = () => (
   <PageWrapper>
     <h1>Progress</h1>
   </PageWrapper>

@@ -17,13 +17,13 @@ export interface TodoProps {
   deleteTodoMutation: Record<string, any>;
 }
 
-export const Todo: React.FC<TodoProps> = ({
+export const Todo = ({
   id,
   title,
   complete,
   updateTodoMutation,
   deleteTodoMutation
-}) => {
+}: TodoProps) => {
   const [checked, setChecked] = useState(complete);
   const { mutate: mutateUpdate } = updateTodoMutation;
   const { mutate: mutateDelete } = deleteTodoMutation;

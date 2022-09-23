@@ -8,7 +8,7 @@ import {
 } from '@ionic/react';
 import { create } from 'ionicons/icons';
 
-export const Header: React.FC = () => {
+export const Header = () => {
   return (
     <IonHeader>
       <IonToolbar>
