@@ -35,7 +35,7 @@ export const Todo: React.FC<TodoProps> = ({
 
   return (
     <IonItemSliding>
-      <IonItem>
+      <IonItem button detailIcon="false" lines="full">
         <IonCheckbox slot="start" checked={checked} onClick={handleCheck} />
         <IonLabel>{title}</IonLabel>
       </IonItem>
