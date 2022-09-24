@@ -1,11 +1,11 @@
-export interface NewUser {
+export type NewUser = {
   firstName: string;
   lastName: string;
   email: string;
-}
+};
 
-export interface User extends NewUser {
+export type User = {
   id: number;
   createdAt: Date;
   updatedAt: Date;
-}
+} & NewUser;

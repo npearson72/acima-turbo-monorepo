@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@acima/ui-hooks": "*",
+    "@acima/ui-providers": "*",
     "@emotion/react": "^11.10.4",
     "@iconify/react": "^4.0.0",
     "@ionic/react": "^6.2.0",

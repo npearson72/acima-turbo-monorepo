@@ -1,3 +1,4 @@
+import { TodosQueryProvider } from '@acima/ui-providers';
 import { Todo } from './Todo';
 
 export default {
@@ -8,13 +9,15 @@ const props = {
   id: 1,
   title: 'Example',
   complete: false,
-  currentTab: 'n/a',
-  updateTodoMutation: { mutate: (params: any) => console.log(params) },
-  deleteTodoMutation: { mutate: (params: any) => console.log(params) }
+  currentTab: 'n/a'
 };
 
 export const TodoStory = () => {
-  return <Todo {...props} />;
+  return (
+    <TodosQueryProvider>
+      <Todo {...props} />
+    </TodosQueryProvider>
+  );
 };
 
 TodoStory.storyName = 'Todo';

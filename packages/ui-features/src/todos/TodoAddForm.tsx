@@ -1,5 +1,6 @@
-import { useState, useMemo } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import { Box, Button, Group, Input } from '@mantine/core';
+import { TodosQueryContext } from '@acima/ui-providers';
 
 const randomLabel = () => {
   const texts = [
@@ -14,17 +15,15 @@ const randomLabel = () => {
   return texts[random];
 };
 
-interface TodoAddFormProps {
-  createTodoMutation: Record<string, any>;
+type Props = {
   setOpened: (value: boolean) => void;
-}
+};
 
-export const TodoAddForm = ({
-  createTodoMutation,
-  setOpened
-}: TodoAddFormProps) => {
+export const TodoAddForm = ({ setOpened }: Props) => {
   const [value, setValue] = useState('');
   const [errorText, setErrorText] = useState(null);
+
+  const { createTodoMutation } = useContext(TodosQueryContext);
   const { mutate: create, isError } = createTodoMutation;
 
   const label = useMemo(() => randomLabel(), []);

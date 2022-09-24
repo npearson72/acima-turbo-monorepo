@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Icon } from '@iconify/react';
 import {
   IonCheckbox,
@@ -8,25 +8,21 @@ import {
   IonItemOption,
   IonLabel
 } from '@ionic/react';
+import { TodosQueryContext } from '@acima/ui-providers';
 
-export interface TodoProps {
+type Props = {
   id: number;
   title: string;
   complete: boolean;
   currentTab: string;
-  updateTodoMutation: Record<string, any>;
-  deleteTodoMutation: Record<string, any>;
-}
+};
 
-export const Todo = ({
-  id,
-  title,
-  complete,
-  currentTab,
-  updateTodoMutation,
-  deleteTodoMutation
-}: TodoProps) => {
+export const Todo = ({ id, title, complete, currentTab }: Props) => {
   const [checked, setChecked] = useState(complete);
+  // eslint-disable-next-line operator-linebreak
+  const { updateTodoMutation, deleteTodoMutation } =
+    useContext(TodosQueryContext);
+
   const { mutate: mutateUpdate } = updateTodoMutation;
   const { mutate: mutateDelete } = deleteTodoMutation;
 

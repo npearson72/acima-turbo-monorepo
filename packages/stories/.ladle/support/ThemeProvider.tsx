@@ -6,9 +6,9 @@ import { SelectTheme } from './SelectTheme';
 
 const themeIds = themes.map(theme => theme.other?.id);
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
+};
 
 const ThemeProvider = ({ children }: Props) => {
   const [themeId, setThemeId] = useState(themeIds[0]);

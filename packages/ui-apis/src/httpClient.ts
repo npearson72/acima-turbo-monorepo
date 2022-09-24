@@ -7,7 +7,27 @@ export const httpClient = axios.create({
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export const mockHttpClient = {
   get: async (path: string) => {
-    return { data: {} };
+    return {
+      data: {
+        todos: [
+          {
+            id: 1,
+            title: 'Example 1',
+            complete: false
+          },
+          {
+            id: 2,
+            title: 'Example 2',
+            complete: false
+          },
+          {
+            id: 3,
+            title: 'Example 3',
+            complete: false
+          }
+        ]
+      }
+    };
   },
 
   post: async (path: string, params: Record<string, any>) => {

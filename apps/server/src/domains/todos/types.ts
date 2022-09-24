@@ -1,11 +1,11 @@
-export interface NewTodo {
+export type NewTodo = {
   title: string;
   complete: boolean;
   userId: number;
-}
+};
 
-export interface Todo extends NewTodo {
+export type Todo = {
   id: number;
   createdAt: Date;
   updatedAt: Date;
-}
+} & NewTodo;

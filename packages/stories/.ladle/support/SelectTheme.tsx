@@ -6,10 +6,10 @@ const style = css`
   margin-bottom: 1rem;
 `;
 
-interface Props {
+type Props = {
   themes: any;
   setThemeId: Dispatch<SetStateAction<string>>;
-}
+};
 
 const SelectTheme = ({ themes, setThemeId }: Props) => {
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {

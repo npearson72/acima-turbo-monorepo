@@ -3,11 +3,7 @@ import { Box, Button, Modal } from '@mantine/core';
 import { Icon } from '@iconify/react';
 import { TodoAddForm } from './TodoAddForm';
 
-interface TodoAddButtonProps {
-  createTodoMutation: Record<string, any>;
-}
-
-export const TodoAddButton = ({ createTodoMutation }: TodoAddButtonProps) => {
+export const TodoAddButton = () => {
   const [opened, setOpened] = useState(false);
 
   return (
@@ -17,10 +13,7 @@ export const TodoAddButton = ({ createTodoMutation }: TodoAddButtonProps) => {
         withCloseButton={false}
         onClose={() => setOpened(false)}
       >
-        <TodoAddForm
-          createTodoMutation={createTodoMutation}
-          setOpened={setOpened}
-        />
+        <TodoAddForm setOpened={setOpened} />
       </Modal>
       <Button
         onClick={() => setOpened(true)}

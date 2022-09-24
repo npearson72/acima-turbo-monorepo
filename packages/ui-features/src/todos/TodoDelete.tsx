@@ -1,17 +1,15 @@
+import { useContext } from 'react';
 import { Paper } from '@mantine/core';
 import { Icon } from '@iconify/react';
+import { TodosQueryContext } from '@acima/ui-providers';
 
-interface TodoDeleteProps {
+type Props = {
   id: number;
-  deleteTodoMutation: Record<string, any>;
   parentHovering: boolean;
-}
+};
 
-export const TodoDelete = ({
-  id,
-  deleteTodoMutation,
-  parentHovering
-}: TodoDeleteProps) => {
+export const TodoDelete = ({ id, parentHovering }: Props) => {
+  const { deleteTodoMutation } = useContext(TodosQueryContext);
   const { mutate: mutateDelete } = deleteTodoMutation;
 
   return (

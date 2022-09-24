@@ -1,27 +1,20 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Checkbox, Group, Paper, Text } from '@mantine/core';
+import { TodosQueryContext } from '@acima/ui-providers';
 import { TodoDelete } from './TodoDelete';
 
-export interface TodoProps {
+type Props = {
   id: number;
   title: string;
   complete: boolean;
   currentTab: string;
-  updateTodoMutation: Record<string, any>;
-  deleteTodoMutation: Record<string, any>;
-}
+};
 
-export const Todo = ({
-  id,
-  title,
-  complete,
-  currentTab,
-  updateTodoMutation,
-  deleteTodoMutation
-}: TodoProps) => {
+export const Todo = ({ id, title, complete, currentTab }: Props) => {
   const [checked, setChecked] = useState(complete);
   const [hovering, setHovering] = useState(false);
 
+  const { updateTodoMutation } = useContext(TodosQueryContext);
   const { mutate: mutateUpdate } = updateTodoMutation;
 
   const handleCheck = () => {
@@ -48,11 +41,7 @@ export const Todo = ({
           onChange={handleCheck}
           label={<Text align="left">{title}</Text>}
         />
-        <TodoDelete
-          id={id}
-          deleteTodoMutation={deleteTodoMutation}
-          parentHovering={hovering}
-        />
+        <TodoDelete id={id} parentHovering={hovering} />
       </Group>
     </Paper>
   );

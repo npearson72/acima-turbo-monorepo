@@ -1,7 +1,7 @@
-interface Props {
+type Props = {
   type: String;
   message?: String;
-}
+};
 
 const failureResult = ({ type, message }: Props) => {
   return {

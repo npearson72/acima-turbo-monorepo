@@ -1,17 +1,21 @@
+import { useContext } from 'react';
 import {
   IonRefresher,
   IonRefresherContent,
   RefresherEventDetail
 } from '@ionic/react';
-import { useTodosQuery } from '@acima/ui-hooks';
+import { TodosQueryContext } from '@acima/ui-providers';
 
 export const TodoListRefresher = () => {
-  const { isLoading, refetch } = useTodosQuery();
+  const { isLoading, refetch, remove } = useContext(TodosQueryContext);
 
   const doRefresh = async (event: CustomEvent<RefresherEventDetail>) => {
     await refetch();
 
-    if (!isLoading) event.detail.complete();
+    if (!isLoading) {
+      remove(); // Remove query from cache else mobile tabs don't update
+      event.detail.complete();
+    }
   };
 
   return (

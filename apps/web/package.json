@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@acima/ui-features": "*",
+    "@acima/ui-providers": "*",
     "@acima/ui-themes": "*",
     "@emotion/react": "^11.10.4",
     "@mantine/core": "^5.3.0",

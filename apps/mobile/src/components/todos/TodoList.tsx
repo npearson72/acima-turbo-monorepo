@@ -1,28 +1,27 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {
   IonContent,
   IonLabel,
   IonSegment,
-  IonSegmentButton
+  IonSegmentButton,
+  SegmentChangeEventDetail
 } from '@ionic/react';
-import { Todo, TodoProps } from './Todo';
+import { TodoListEmpty, TodoListLoading } from '@acima/ui-features';
+import { TodosQueryContext } from '@acima/ui-providers';
+import { Todo } from './Todo';
 
-interface TodoListProps {
-  todos: Pick<TodoProps, 'id' | 'title' | 'complete'>[];
-  updateTodoMutation: Record<string, any>;
-  deleteTodoMutation: Record<string, any>;
-}
+type Tab = string | undefined;
 
-export const TodoList = ({
-  todos,
-  updateTodoMutation,
-  deleteTodoMutation
-}: TodoListProps) => {
-  const [currentTab, setCurrentTab] = useState('available');
+export const TodoList = () => {
+  const [currentTab, setCurrentTab] = useState<Tab>('available');
+  const { data, isLoading } = useContext(TodosQueryContext);
 
-  const handleTabChange = (e: any) => {
+  const handleTabChange = (e: CustomEvent<SegmentChangeEventDetail>) => {
     setCurrentTab(e.detail.value);
   };
+
+  if (isLoading) return <TodoListLoading />;
+  if (data.todos.length < 1) return <TodoListEmpty />;
 
   return (
     <IonContent>
@@ -34,14 +33,8 @@ export const TodoList = ({
           <IonLabel>Complete</IonLabel>
         </IonSegmentButton>
       </IonSegment>
-      {todos.map(todo => (
-        <Todo
-          key={todo.id}
-          updateTodoMutation={updateTodoMutation}
-          deleteTodoMutation={deleteTodoMutation}
-          currentTab={currentTab}
-          {...todo}
-        />
+      {data.todos.map((todo: any) => (
+        <Todo key={todo.id} currentTab={currentTab} {...todo} />
       ))}
     </IonContent>
   );

@@ -9,12 +9,13 @@ import {
   IonToolbar
 } from '@ionic/react';
 
-interface Props {
+type Props = {
   pageRef: RefObject<HTMLDivElement>;
   modalRef: RefObject<HTMLIonModalElement>;
   dismissModal: () => void;
   children: React.ReactNode;
-}
+};
+
 export const Modal = ({ pageRef, modalRef, dismissModal, children }: Props) => {
   // eslint-disable-next-line
   const [presentingElement, setPresentingElement] =

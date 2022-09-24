@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@acima/ui-features": "*",
+    "@acima/ui-providers": "*",
     "@acima/ui-themes": "*",
     "@capacitor/android": "^4.0.1",
     "@capacitor/app": "^4.0.1",

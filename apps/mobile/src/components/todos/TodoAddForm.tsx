@@ -1,18 +1,17 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { IonButton, IonContent, IonInput, IonItem } from '@ionic/react';
 import { Text } from '@mantine/core';
+import { TodosQueryContext } from '@acima/ui-providers';
 
-interface TodoAddFormProps {
-  createTodoMutation: Record<string, any>;
+type Props = {
   dismissModal: () => void;
-}
+};
 
-export const TodoAddForm = ({
-  dismissModal,
-  createTodoMutation
-}: TodoAddFormProps) => {
+export const TodoAddForm = ({ dismissModal }: Props) => {
   const [value, setValue] = useState('');
   const [errorText, setErrorText] = useState(null);
+
+  const { createTodoMutation } = useContext(TodosQueryContext);
   const { mutate: create, isError } = createTodoMutation;
 
   const addTodo = () => {

@@ -1,19 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Stack, Tabs } from '@mantine/core';
-import { Todo, TodoProps } from './Todo';
+import { TodosQueryContext } from '@acima/ui-providers';
+import { Todo, TodoListLoading, TodoListEmpty } from '.';
 
-interface TodoListProps {
-  todos: Pick<TodoProps, 'id' | 'title' | 'complete'>[];
-  updateTodoMutation: Record<string, any>;
-  deleteTodoMutation: Record<string, any>;
-}
-
-export const TodoList = ({
-  todos,
-  updateTodoMutation,
-  deleteTodoMutation
-}: TodoListProps) => {
+export const TodoList = () => {
   const [currentTab, setCurrentTab] = useState('available');
+  const { data, isLoading } = useContext(TodosQueryContext);
+
+  if (isLoading) return <TodoListLoading />;
+  if (data.todos.length < 1) return <TodoListEmpty />;
 
   return (
     <Stack spacing={3}>
@@ -30,14 +25,8 @@ export const TodoList = ({
           </Tabs.Tab>
         </Tabs.List>
       </Tabs>
-      {todos.map(todo => (
-        <Todo
-          key={todo.id}
-          updateTodoMutation={updateTodoMutation}
-          deleteTodoMutation={deleteTodoMutation}
-          currentTab={currentTab}
-          {...todo}
-        />
+      {data.todos.map((todo: any) => (
+        <Todo key={todo.id} currentTab={currentTab} {...todo} />
       ))}
     </Stack>
   );
