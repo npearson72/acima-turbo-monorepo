@@ -25,10 +25,10 @@ export const Todo = ({
   const { mutate: mutateUpdate } = updateTodoMutation;
 
   const handleCheck = () => {
-    setChecked(!complete);
+    setChecked(!checked);
     // Todos are moved to other tab once checked, so clear hovering state.
     setHovering(!hovering);
-    mutateUpdate({ id, complete: !complete });
+    mutateUpdate({ id, complete: !checked });
   };
 
   if (currentTab === 'available' && checked) return null;

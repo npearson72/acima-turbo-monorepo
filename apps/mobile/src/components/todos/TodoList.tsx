@@ -34,31 +34,15 @@ export const TodoList = ({
           <IonLabel>Complete</IonLabel>
         </IonSegmentButton>
       </IonSegment>
-      {currentTab === 'available'
-        ? todos.map(todo => {
-            if (todo.complete) return null;
-
-            return (
-              <Todo
-                key={todo.id}
-                updateTodoMutation={updateTodoMutation}
-                deleteTodoMutation={deleteTodoMutation}
-                {...todo}
-              />
-            );
-          })
-        : todos.map(todo => {
-            if (!todo.complete) return null;
-
-            return (
-              <Todo
-                key={todo.id}
-                updateTodoMutation={updateTodoMutation}
-                deleteTodoMutation={deleteTodoMutation}
-                {...todo}
-              />
-            );
-          })}
+      {todos.map(todo => (
+        <Todo
+          key={todo.id}
+          updateTodoMutation={updateTodoMutation}
+          deleteTodoMutation={deleteTodoMutation}
+          currentTab={currentTab}
+          {...todo}
+        />
+      ))}
     </IonContent>
   );
 };

@@ -13,6 +13,7 @@ export interface TodoProps {
   id: number;
   title: string;
   complete: boolean;
+  currentTab: string;
   updateTodoMutation: Record<string, any>;
   deleteTodoMutation: Record<string, any>;
 }
@@ -21,6 +22,7 @@ export const Todo = ({
   id,
   title,
   complete,
+  currentTab,
   updateTodoMutation,
   deleteTodoMutation
 }: TodoProps) => {
@@ -29,9 +31,12 @@ export const Todo = ({
   const { mutate: mutateDelete } = deleteTodoMutation;
 
   const handleCheck = () => {
-    setChecked(!complete);
-    mutateUpdate({ id, complete: !complete });
+    setChecked(!checked);
+    mutateUpdate({ id, complete: !checked });
   };
+
+  if (currentTab === 'available' && checked) return null;
+  if (currentTab === 'complete' && !checked) return null;
 
   return (
     <IonItemSliding>

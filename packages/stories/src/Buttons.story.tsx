@@ -1,10 +1,4 @@
-import { Button } from '@mantine/core';
-import { css } from '@emotion/react';
-
-const style = css`
-  display: flex;
-  gap: 10px;
-`;
+import { Button, Group } from '@mantine/core';
 
 export default {
   title: 'Primitives / Buttons'
@@ -12,11 +6,11 @@ export default {
 
 export const Story = () => {
   return (
-    <div css={style}>
+    <Group spacing="sm">
       <Button variant="filled">Button</Button>
       <Button variant="light">Button</Button>
       <Button variant="outline">Button</Button>
-    </div>
+    </Group>
   );
 };
 
