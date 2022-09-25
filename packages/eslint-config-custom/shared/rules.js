@@ -21,6 +21,8 @@ module.exports = {
     'max-classes-per-file': 'off',
     'max-len': ['error', { code: 80 }],
     'newline-per-chained-call': 'off',
+    'no-param-reassign': 'off',
+    'no-restricted-syntax': 'off',
     'no-underscore-dangle': 'off',
     'object-curly-newline': 'off',
     quotes: 'off'

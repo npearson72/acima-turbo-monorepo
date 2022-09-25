@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'dev.acima.mobile',
+  appId: 'dev.acima.ionic',
   appName: 'Acima',
   webDir: 'dist',
   bundledWebRuntime: false

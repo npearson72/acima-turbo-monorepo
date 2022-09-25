@@ -1,7 +1,7 @@
 import { TodoListTabs } from './TodoListTabs';
 
 export default {
-  title: 'Todos / Mobile'
+  title: 'Todos / Ionic'
 };
 
 export const TodoListTabsStory = () => {

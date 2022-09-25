@@ -38,7 +38,7 @@ export const Todo = ({ id, title, complete, currentTab }: Props) => {
     <IonItemSliding>
       <IonItem button detailIcon="false" lines="full">
         <IonCheckbox slot="start" checked={checked} onClick={handleCheck} />
-        <IonLabel>{title}</IonLabel>
+        <IonLabel style={{ padding: '10px 0' }}>{title}</IonLabel>
       </IonItem>
 
       <IonItemOptions side="end">

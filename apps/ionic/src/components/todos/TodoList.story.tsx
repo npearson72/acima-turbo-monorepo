@@ -2,7 +2,7 @@ import { TodosQueryProvider } from '@acima/ui-providers';
 import { TodoList } from './TodoList';
 
 export default {
-  title: 'Todos / Mobile'
+  title: 'Todos / Ionic'
 };
 
 export const TodoListStory = () => {

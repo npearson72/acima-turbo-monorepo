@@ -1,20 +1,46 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { NativeBaseProvider, extendTheme } from 'native-base';
+import { TodosQueryProvider } from '@acima/ui-providers';
+import { TodosPage } from './pages';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+const theme = extendTheme({
+  colors: {
+    brand: {
+      600: '#1a91ff'
+    }
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        rounded: 'md'
+      },
+      defaultProps: {
+        colorScheme: 'red'
+      }
+    },
+    Checkbox: {
+      defaultProps: {
+        borderWidth: 1,
+        borderRadius: 'xl',
+        colorScheme: 'brand',
+        size: 'md'
+      }
+    }
   }
 });
 
 export const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar />
-    </View>
+    <SafeAreaProvider>
+      <NativeBaseProvider theme={theme}>
+        <TodosQueryProvider>
+          <SafeAreaView>
+            <TodosPage />
+            <StatusBar style="auto" />
+          </SafeAreaView>
+        </TodosQueryProvider>
+      </NativeBaseProvider>
+    </SafeAreaProvider>
   );
 };

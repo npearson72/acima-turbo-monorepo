@@ -13,7 +13,7 @@ export const TodoListRefresher = () => {
     await refetch();
 
     if (!isLoading) {
-      remove(); // Remove query from cache else mobile tabs don't update
+      remove(); // Remove query from cache else ionic tabs don't update
       event.detail.complete();
     }
   };

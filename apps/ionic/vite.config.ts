@@ -29,7 +29,7 @@ export default ({ mode }) => {
     define: {
       process: {
         env: {
-          PLATFORM: 'mobile',
+          PLATFORM: 'ionic',
           SERVER_URL: process.env.VITE_SERVER_URL
         }
       }
