@@ -3,9 +3,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
-    "jsxImportSource": "@emotion/react",
-    "target": "ESNext"
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
 }
