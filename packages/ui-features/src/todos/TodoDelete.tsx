@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Paper } from '@mantine/core';
+import { ActionIcon } from '@mantine/core';
 import { Icon } from '@iconify/react';
 import { TodosQueryContext } from '@acima/ui-providers';
 
@@ -10,10 +10,12 @@ type Props = {
 
 export const TodoDelete = ({ id, parentHovering }: Props) => {
   const { deleteTodoMutation } = useContext(TodosQueryContext);
+
   const { mutate: mutateDelete } = deleteTodoMutation;
 
   return (
-    <Paper
+    <ActionIcon
+      title="Delete"
       onClick={() => mutateDelete({ id })}
       sx={theme => ({
         color: theme.colors.dark[0],
@@ -21,14 +23,18 @@ export const TodoDelete = ({ id, parentHovering }: Props) => {
         display: parentHovering ? 'block' : 'none',
         fontSize: '1.5rem',
         lineHeight: 0,
-        padding: 0,
+
+        '&:focus': {
+          display: 'block'
+        },
 
         '&:hover': {
+          background: 'none',
           color: theme.colors.dark[2]
         }
       })}
     >
       <Icon icon="icons8:trash" />
-    </Paper>
+    </ActionIcon>
   );
 };

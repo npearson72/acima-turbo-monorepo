@@ -16,19 +16,11 @@ export const TodoAddButton = () => {
         <TodoAddForm setOpened={setOpened} />
       </Modal>
       <Button
+        leftIcon={<Icon icon="ic:round-add-task" />}
         onClick={() => setOpened(true)}
-        sx={{
-          paddingLeft: 10,
-          marginBottom: '1.5rem',
-
-          '.icon': {
-            fontSize: '1.2rem',
-            marginRight: 5
-          }
-        }}
+        sx={{ '.mantine-Button-icon': { fontSize: '1.3rem' } }}
       >
-        <Icon icon="ic:round-add-task" className="icon" />
-        <div className="text">Add Todo</div>
+        Add a Todo
       </Button>
     </Box>
   );

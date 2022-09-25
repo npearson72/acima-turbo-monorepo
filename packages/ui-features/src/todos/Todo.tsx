@@ -13,8 +13,8 @@ type Props = {
 export const Todo = ({ id, title, complete, currentTab }: Props) => {
   const [checked, setChecked] = useState(complete);
   const [hovering, setHovering] = useState(false);
-
   const { updateTodoMutation } = useContext(TodosQueryContext);
+
   const { mutate: mutateUpdate } = updateTodoMutation;
 
   const handleCheck = () => {
@@ -38,8 +38,10 @@ export const Todo = ({ id, title, complete, currentTab }: Props) => {
         <Checkbox
           value={id}
           checked={checked}
+          label={<Text title={title}>{title}</Text>}
           onChange={handleCheck}
-          label={<Text align="left">{title}</Text>}
+          onFocus={() => setHovering(true)}
+          onBlur={() => setTimeout(() => setHovering(false), 0)}
         />
         <TodoDelete id={id} parentHovering={hovering} />
       </Group>
