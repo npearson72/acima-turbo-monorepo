@@ -12,15 +12,15 @@ type Props = {
 
 export const Todo = ({ id, title, complete, currentTab }: Props) => {
   const [checked, setChecked] = useState(complete);
-  const [hovering, setHovering] = useState(false);
+  const [displayDelete, setDisplayDelete] = useState(false);
   const { updateTodoMutation } = useContext(TodosQueryContext);
 
   const { mutate: mutateUpdate } = updateTodoMutation;
 
   const handleCheck = () => {
     setChecked(!checked);
-    // Todos are moved to other tab once checked, so clear hovering state.
-    setHovering(!hovering);
+    // Todos are moved to other tab once checked, so toggle displayDelete state.
+    setDisplayDelete(!displayDelete);
     mutateUpdate({ id, complete: !checked });
   };
 
@@ -31,8 +31,8 @@ export const Todo = ({ id, title, complete, currentTab }: Props) => {
     <Paper
       shadow="xs"
       p="sm"
-      onMouseEnter={() => setHovering(true)}
-      onMouseLeave={() => setHovering(false)}
+      onMouseEnter={() => setDisplayDelete(true)}
+      onMouseLeave={() => setDisplayDelete(false)}
     >
       <Group position="apart" sx={{ height: '2rem' }}>
         <Checkbox
@@ -40,10 +40,10 @@ export const Todo = ({ id, title, complete, currentTab }: Props) => {
           checked={checked}
           label={<Text title={title}>{title}</Text>}
           onChange={handleCheck}
-          onFocus={() => setHovering(true)}
-          onBlur={() => setTimeout(() => setHovering(false), 0)}
+          onFocus={() => setDisplayDelete(true)}
+          onBlur={() => setTimeout(() => setDisplayDelete(false), 0)}
         />
-        <TodoDelete id={id} parentHovering={hovering} />
+        <TodoDelete id={id} displayDelete={displayDelete} />
       </Group>
     </Paper>
   );

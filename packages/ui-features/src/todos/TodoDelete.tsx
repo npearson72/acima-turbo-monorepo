@@ -5,10 +5,10 @@ import { TodosQueryContext } from '@acima/ui-providers';
 
 type Props = {
   id: number;
-  parentHovering: boolean;
+  displayDelete: boolean;
 };
 
-export const TodoDelete = ({ id, parentHovering }: Props) => {
+export const TodoDelete = ({ id, displayDelete }: Props) => {
   const { deleteTodoMutation } = useContext(TodosQueryContext);
 
   const { mutate: mutateDelete } = deleteTodoMutation;
@@ -20,7 +20,7 @@ export const TodoDelete = ({ id, parentHovering }: Props) => {
       sx={theme => ({
         color: theme.colors.dark[0],
         cursor: 'pointer',
-        display: parentHovering ? 'block' : 'none',
+        display: displayDelete ? 'block' : 'none',
         fontSize: '1.5rem',
         lineHeight: 0,
 
