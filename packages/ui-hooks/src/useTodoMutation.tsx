@@ -7,11 +7,11 @@ export const useTodoMutation = (
 ) => {
   const queryClient = useQueryClient();
 
-  let repo: any;
+  let api: any;
 
-  if (action === 'create') repo = todosApi.create;
-  if (action === 'update') repo = todosApi.update;
-  if (action === 'delete') repo = todosApi.delete;
+  if (action === 'create') api = todosApi.create;
+  if (action === 'update') api = todosApi.update;
+  if (action === 'delete') api = todosApi.delete;
 
   const defaultOptions = {
     onSuccess: () => {
@@ -19,5 +19,5 @@ export const useTodoMutation = (
     }
   };
 
-  return useMutation(repo, options || defaultOptions);
+  return useMutation(api, options || defaultOptions);
 };
