@@ -23,11 +23,7 @@ module.exports = {
     content: path.resolve('src/content/content.ts')
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-    alias: {
-      '@emotion': path.resolve('node_modules/@emotion'),
-      react: path.resolve('node_modules/react')
-    }
+    extensions: ['.tsx', '.ts', '.js']
   },
   module: {
     rules: [
