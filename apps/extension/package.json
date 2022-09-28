@@ -2,6 +2,11 @@
   "name": "@acima/extension",
   "version": "0.0.0",
   "private": true,
+  "workspaces": {
+    "nohoist": [
+      "**/@emotion/**"
+    ]
+  },
   "scripts": {
     "build": "tsc --noEmit && webpack --config webpack.prod.js",
     "clear:dist": "rm -rf dist",

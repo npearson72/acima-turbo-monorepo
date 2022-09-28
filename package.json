@@ -24,6 +24,9 @@
     "turbo": "latest",
     "typescript": "^4.8.2"
   },
+  "resolutions": {
+    "@acima/native/**/native-base/**/react": "^17.0.0"
+  },
   "engines": {
     "node": ">=14.0.0"
   },

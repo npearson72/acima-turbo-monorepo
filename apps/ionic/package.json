@@ -4,7 +4,7 @@
   "private": true,
   "workspaces": {
     "nohoist": [
-      "**/@capacitor/*"
+      "**/@capacitor/**"
     ]
   },
   "scripts": {

@@ -8,13 +8,11 @@
   },
   "dependencies": {
     "@acima/ui-apis": "*",
-    "@tanstack/react-query": "^4.3.6",
-    "react": "^18.2.0"
+    "@tanstack/react-query": "^4.3.6"
   },
   "devDependencies": {
     "@acima/eslint-config-custom": "*",
     "@acima/tsconfig": "*",
-    "@types/react": "^18.0.19",
     "typescript": "^4.8.2"
   }
 }
