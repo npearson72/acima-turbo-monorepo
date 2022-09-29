@@ -8,7 +8,7 @@
     ]
   },
   "scripts": {
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc && vite build",
     "clear:dist": "rm -rf dist",
     "dev": "vite",
     "dev:android": "ionic cap run android -l --external --target Pixel_5_API_33",

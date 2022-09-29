@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc && vite build",
     "clear:dist": "rm -rf dist",
     "lint": "eslint src --quiet",
     "preview": "vite preview"

@@ -8,6 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "moduleResolution": "node",
+    "noEmit": true,
     "noImplicitAny": true,
     "preserveWatchOutput": true,
     "pretty": true,

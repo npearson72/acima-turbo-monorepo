@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "tsc --noEmit && node build.js",
+    "build": "tsc && node build.js",
     "clear:dist": "rm -rf dist",
     "dev": "tsx watch --inspect --clear-screen=false src/index.ts",
     "lint": "eslint src --quiet",

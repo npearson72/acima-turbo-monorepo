@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "tsc --noEmit && webpack --config webpack.prod.js",
+    "build": "tsc && webpack --config webpack.prod.js",
     "clear:dist": "rm -rf dist",
     "dev": "webpack --watch --config webpack.dev.js",
     "lint": "eslint src --quiet"
