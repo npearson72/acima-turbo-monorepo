@@ -13,7 +13,7 @@ export default ({ mode }) => {
       rollupOptions: {
         output: {
           manualChunks: id => {
-            if (id.includes('ionic')) {
+            if (id.includes('@ionic')) {
               return 'ionic';
             }
 
