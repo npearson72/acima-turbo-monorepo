@@ -9,7 +9,7 @@
     "lint": "eslint src --quiet",
     "preview": "yarn serve",
     "serve": "node -r ts-node/register src/index.ts",
-    "test": "jest --watch"
+    "test": "jest --watchAll"
   },
   "dependencies": {
     "@prisma/client": "^4.3.1",

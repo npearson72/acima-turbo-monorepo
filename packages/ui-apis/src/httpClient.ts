@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // TODO: Figure out how to pass env vars from Expo
 export const httpClient = axios.create({
-  baseURL: 'http://192.168.86.156:5000/api/v1/'
+  baseURL: 'http://192.168.86.156:4000/api/v1/'
 });
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
