@@ -1,5 +1,6 @@
 {
-  "nodeArgs": ["--enable-source-maps", "--inspect"],
-  "watch": ["dist/index.js"],
+  "exec": "node --inspect -r ts-node/register src/index.ts",
+  "ext": "ts,json",
+  "watch": ["src/**/*"],
   "verbose": true
 }
