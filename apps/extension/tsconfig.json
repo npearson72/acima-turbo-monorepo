@@ -4,6 +4,6 @@
     "outDir": "dist",
     "jsxImportSource": "@emotion/react"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }
